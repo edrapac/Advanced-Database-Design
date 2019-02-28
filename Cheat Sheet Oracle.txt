@@ -1,0 +1,24 @@
+select column_name from all_tab_columns Where TABLE_NAME = 'your_table_here' ;
+Shows all the column names in a certain table
+
+ALTER TABLE table_name
+  ADD column_name datatype;
+
+Is how to alter tables, in this instance it adds a column
+
+UPDATE CUSTOMER SET Gender = 'M' WHERE "Customer_ID"='00001';
+
+Updates the table customer, inserts the value 'M' for gender where customer_id = 00001
+
+ALTER TABLE CUSTOMER
+  ADD CONSTRAINT STATE_CHECK CHECK ("State" = upper("State"));
+
+NVL tells us what to do with NULL Values
+
+SELECT Tell_Number, NVL(Tell_Number,'Not available') as NVL_USE
+From CUSTOMER
+
+Tells us that if there is a null value the string 'Not available' will be applied
+
+ALTER TABLE table_name 
+ADD CONSTRAINT MyUniqueConstraint CHECK (CONDITION);

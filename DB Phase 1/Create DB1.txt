@@ -1,0 +1,921 @@
+drop table CUSTOMER cascade constraints;
+drop table STYLES cascade constraints;
+drop table SUBJECT cascade constraints;
+drop table ARTIST cascade constraints;
+drop table PAINTING cascade constraints;
+drop table CUSTOMER_ORDER cascade constraints;
+drop table PAINTING_ORDER cascade constraints;
+drop table PAINTING_SUBJECT cascade constraints;
+drop table PAINTING_STYLE cascade constraints;
+
+
+
+CREATE TABLE CUSTOMER 
+  ("Customer_ID" VARCHAR(5) not null, 
+  "First_name" VARCHAR(20) not null,
+  "Last_name" VARCHAR(20) not null,
+  "Date_birth" DATE,
+  "Street_number" VARCHAR(20),
+  "Street_name" VARCHAR(20),
+  "City" VARCHAR(30),
+  "State" VARCHAR(30),
+  "Country" VARCHAR(30),
+  "Postal_code" VARCHAR(10),
+  CONSTRAINT CUSTOMER PRIMARY KEY ("Customer_ID"));
+
+
+
+CREATE TABLE SUBJECT (
+  "Subject_ID" VARCHAR(5) not null,
+  "SUBJECT" VARCHAR(100) not null,
+  "Description" VARCHAR(100),
+  PRIMARY KEY ("Subject_ID")
+);
+
+CREATE TABLE STYLES (
+  "Style_ID" VARCHAR(3) not null,
+  "Style_name" VARCHAR(100),
+  "Style_description" VARCHAR(150),
+  CONSTRAINT Style_PK PRIMARY KEY ("Style_ID")
+);
+
+CREATE TABLE ARTIST (
+  "Artist_ID" VARCHAR(3) not null,
+  "First_name" VARCHAR(20) not null,
+  "Last_name" VARCHAR(20) not null,
+  "Year_birth" VARCHAR(4),
+  "Year_death" VARCHAR(4),
+  CONSTRAINT Artist_PK PRIMARY KEY ("Artist_ID")
+);
+
+CREATE TABLE PAINTING (
+  "Painting_ID" VARCHAR(5) not null,
+  "Artist_ID" VARCHAR(3) not null,
+  "Title" VARCHAR(100) not null,
+  "Description" VARCHAR(200) ,
+  "Year_painted" VARCHAR(4),
+  "Height" VARCHAR(5),
+  "Width" VARCHAR(5),
+  "Price" VARCHAR(7),
+  CONSTRAINT Painting_PK PRIMARY KEY ("Painting_ID"),
+  CONSTRAINT Painting_FK FOREIGN KEY ("Artist_ID") REFERENCES ARTIST("Artist_ID")
+);
+
+CREATE TABLE CUSTOMER_ORDER (
+  "Order_ID" VARCHAR(5) not null,
+  "Customer_ID" VARCHAR(5) not null,
+  "Date_created" DATE,
+  "Date_shipped" DATE,
+  CONSTRAINT Customer_Order_PK PRIMARY KEY ("Order_ID"),
+  CONSTRAINT Customer_Order_FK1 FOREIGN KEY ("Customer_ID") REFERENCES CUSTOMER("Customer_ID")
+
+);
+
+
+
+
+CREATE TABLE PAINTING_ORDER (
+  "Order_ID" VARCHAR(5) not null,
+  "Painting_ID" VARCHAR(5) not null,
+  CONSTRAINT PAINTING_ORDER PRIMARY KEY ("Painting_ID", "Order_ID"),
+  CONSTRAINT Painting_Order_FK1 FOREIGN KEY ("Order_ID") REFERENCES CUSTOMER_ORDER("Order_ID"),
+  CONSTRAINT Painting_Order_FK2 FOREIGN KEY ("Painting_ID") REFERENCES PAINTING("Painting_ID")
+);
+
+
+
+CREATE TABLE PAINTING_SUBJECT(
+  "Painting_ID" VARCHAR(5) not null,
+  "Subject_ID" VARCHAR(5) not null,
+  CONSTRAINT PAINTING_SUBJECT PRIMARY KEY ("Painting_ID","Subject_ID"),
+  CONSTRAINT Painting_Subject_FK1 FOREIGN KEY ("Painting_ID") REFERENCES PAINTING("Painting_ID"),
+  CONSTRAINT Painting_Subject_FK2 FOREIGN KEY ("Subject_ID") REFERENCES SUBJECT("Subject_ID")
+);
+
+CREATE TABLE PAINTING_STYLE (
+  "Painting_ID" VARCHAR(5) not null,
+  "Style_ID" VARCHAR(3) not null,
+  CONSTRAINT Painting_Style_PK PRIMARY KEY ("Painting_ID", "Style_ID"),
+  CONSTRAINT Painting_Style_FK1 FOREIGN KEY ("Painting_ID") REFERENCES PAINTING("Painting_ID"),
+  CONSTRAINT Painting_Style_FK2 FOREIGN KEY ("Style_ID") REFERENCES STYLES("Style_ID")
+);
+
+-- Populate ARTIST
+SET DEFINE OFF
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('001', 'Rembrandt', 'van Rijn', '1606', '1669');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('002', 'Frans ', 'Hals', '1582', '1666');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('003', 'Carel', 'Fabritius', '1622', '1654');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('004', 'Jan', 'de Bray', '1697', '1697');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('005', 'Cornelis ', 'Verbeeck', '1590', '1673');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('006', 'Gerrit ', 'van Honthorst', '1592', '1656');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('007', 'Cornelis ', 'van Poelenburch', '1592', '1667');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('008', 'Adam', 'van Breen', '1585', '1642');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('009', 'Pieter', 'Breughel', '1525', '1569');
+
+INSERT INTO ARTIST ("Artist_ID", "First_name", "Last_name", "Year_birth", "Year_death") 
+VALUES ('010', 'Aelbert ', 'Cuyp', '1620', '1691');
+
+-- Populate PAINTING
+SET DEFINE OFF
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00001', '008', 'Skating on the Frozen Amstel River ', 'Oil on Canvas', '1611', '44.3', '66.5', '570.84');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00002', '005', 'A Naval Encounter between Dutch and Spanish Warships', 'Oil on Canvas', '1618', '47.63', '141', '409.06');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00003', '003', 'The Goldfinch', 'Oil on Canvas', '1654', '33.5', '22.8', '277.53');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00004', '001', 'Portrait of Rembrandt', 'Oil on Panel', '1650', '92.0', '75.5', '713.1');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00005', '001', 'Head of an Aged Woman', 'Oil on Panel', '1655', '99.5', '82.5', '379.22');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00006', '001', 'Portrait of a Gentleman with a Tall Hat and Gloves', 'Oil on Canvas transferred to Canvas', '1656', '98.3', '81.5', '756.87');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00007', '001', 'Portrait of a Lady with an Ostrich Feather Fan', 'Oil on Canvas transferred to Canvas', '1656', '99.5', '83.0', '41.12');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00008', '001', 'The Apostle Paul', 'Oil on Canvas', '1657', '131.5', '104.4', '19.47');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00009', '001', 'Self-Portrait', 'Oil on Canvas', '1659', '109.9', '89.5', '337.4');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00010', '001', 'A Young Man Seated at a Table', 'Oil on Canvas', '1660', '109.9', '89.5', '61.96');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00011', '001', 'Lucretia', 'Oil on Canvas', '1664', '120.0', '101.0', '806.58');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00012', '001', 'A Polish Nobleman', 'Oil on Panel', '1637', '96.8', '66.0', '914.54');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00013', '001', 'The Descent from the Cross', 'Oil on Canvas', '1650', '142.0', '110.9', '657.39');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00014', '009', 'The Hunters in the Snow', 'Oil on wood', '1565', '117 ', '162 ', '463.92');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00015', '002', 'Portrait of an Elderly Lady', 'Oil on Canvas', '1633', '102.5', '86.9', '557.12');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00016', '004', 'Head of a Young Boy', 'Oil on Copper', '1650', '7.5', '5.9', '252.76');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00017', '006', 'The Concert', 'Oil on Canvas', '1623', '123.5', '205.0', '846.63');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00018', '007', 'The Prophet Elijah and the Widow of Zarephath', 'Oil on Panel', '1630', '35.6', '47.0', '752.13');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00019', '009', 'The Fall of Icarus', 'Oil on Canvas ', '1558', '73.5', '112.0', '655.23');
+
+INSERT INTO PAINTING ("Painting_ID", "Artist_ID", "Title", "Description", "Year_painted", "Height", "Width", "Price") 
+VALUES ('00020', '010', 'A Pier Overlooking Dordrecht', 'Oil on Panel', '1641', '44.5', '75.9', '537.63');
+
+-- Populate Style
+SET DEFINE OFF
+
+INSERT INTO STYLES ("Style_ID", "Style_name", "Style_description") 
+VALUES ('001', 'Landscape', 'Large, depiction of Nature, Earth colors');
+
+INSERT INTO STYLES ("Style_ID", "Style_name", "Style_description") 
+VALUES ('002', 'Genre PAINTING', 'Various subjects and depictions, everyday and fantastical');
+
+INSERT INTO STYLES ("Style_ID", "Style_name", "Style_description") 
+VALUES ('003', 'Historical Depiction', 'Depiction of historical figures or events');
+
+INSERT INTO STYLES ("Style_ID", "Style_name", "Style_description") 
+VALUES ('004', 'Still Life ', 'Realism, often highly detailed objects');
+
+INSERT INTO STYLES ("Style_ID", "Style_name", "Style_description") 
+VALUES ('005', 'Portrait', 'Potraits of subjects or of painter themselves');
+
+-- Populate SUBJECT
+SET DEFINE OFF
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('100', 'Seascape', 'Seascapes, Harbours, and Ships');
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('101', 'Modern Landscape', 'Includes allusions to modern world');
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('102', 'Animal ', 'Animal depictions ');
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('103', 'Humans', 'Human figure with realistic qualities');
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('104', 'Religious', 'Depicts religiously significant event');
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('105', 'Self', 'Self Portrait ');
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('106', 'Labours', 'Depicts daily life ');
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('107', 'Legendary', 'Depicts famous stories');
+
+INSERT INTO SUBJECT ("Subject_ID", "SUBJECT", "Description") 
+VALUES ('108', 'Classic landscape', 'Timeless depiction of landscapes');
+
+--Populate CUSTOMER 
+
+SET DEFINE OFF
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00001', 'Tatiania', 'Burrage', to_date('1934-10-07', 'RRRR-MM-DD'), '748', 'Magdeline', 'Tucson', 'AZ', 'USA', '85715');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00002', 'Gaby', 'Ivanishchev', to_date('1942-08-31', 'RRRR-MM-DD'), '4270', '3rd', 'Chula Vista', 'CA', 'USA', '91913');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00003', 'Austina', 'Stain', to_date('1931-03-07', 'RRRR-MM-DD'), '9', 'Knutson', 'London', 'KY', 'USA', '40745');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00004', 'Cchaddie', 'Whisson', to_date('1930-10-26', 'RRRR-MM-DD'), '11324', 'Sheridan', 'Pasadena', 'TX', 'USA', '77505');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00005', 'Veriee', 'Vosse', to_date('1943-06-04', 'RRRR-MM-DD'), '78734', 'Hintze', 'Nashville', 'TN', 'USA', '37240');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00006', 'Layney', 'Gehringer', to_date('1989-01-21', 'RRRR-MM-DD'), '13194', 'Lyons', 'New Haven', 'CT', 'USA', '6505');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00007', 'Candide', 'Yitshak', to_date('1970-06-04', 'RRRR-MM-DD'), '14', 'Bellgrove', 'Anderson', 'SC', 'USA', '29625');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00008', 'Sydelle', 'Andreotti', to_date('1969-05-16', 'RRRR-MM-DD'), '9', 'Porter', 'Newport News', 'VA', 'USA', '23605');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00009', 'Rodrigo', 'Dunlap', to_date('1950-12-04', 'RRRR-MM-DD'), '50143', 'Sage', 'New Haven', 'CT', 'USA', '6533');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00010', 'Silvana', 'Cruikshank', to_date('1933-01-22', 'RRRR-MM-DD'), '8268', 'Mallard', 'Boca Raton', 'FL', 'USA', '33487');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00011', 'Malory', 'Vannoni', to_date('1960-03-23', 'RRRR-MM-DD'), '47', 'Waubesa', 'Detroit', 'MI', 'USA', '48258');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00012', 'Morissa', 'Caselick', to_date('1988-05-17', 'RRRR-MM-DD'), '845', 'High Crossing', 'Tacoma', 'WA', 'USA', '98405');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00013', 'Wayne', 'Monnelly', to_date('1937-06-08', 'RRRR-MM-DD'), '0', 'Killdeer', 'New York City', 'NY', 'USA', '10270');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00014', 'Gualterio', 'Mallam', to_date('1979-02-20', 'RRRR-MM-DD'), '42765', 'Shopko', 'Columbia', 'SC', 'USA', '29215');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00015', 'Tracie', 'Biggar', to_date('1931-02-16', 'RRRR-MM-DD'), '34', 'Vahlen', 'Houston', 'TX', 'USA', '77030');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00016', 'Daria', 'Winchcomb', to_date('1974-05-09', 'RRRR-MM-DD'), '70', 'Sheridan', 'Minneapolis', 'MN', 'USA', '55448');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00017', 'Ag', 'Molen', to_date('1985-11-05', 'RRRR-MM-DD'), '609', 'Brentwood', 'Memphis', 'TN', 'USA', '38197');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00018', 'Catlee', 'Sharville', to_date('1934-04-24', 'RRRR-MM-DD'), '122', 'Gina', 'Reno', 'NV', 'USA', '89519');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00019', 'Renie', 'Edlyn', to_date('1986-07-24', 'RRRR-MM-DD'), '31169', 'Pawling', 'Amarillo', 'TX', 'USA', '79176');
+
+INSERT INTO CUSTOMER ("Customer_ID", "First_name", "Last_name", "Date_birth", "Street_number", "Street_name", "City", "State", "Country", "Postal_code") 
+VALUES ('00020', 'Jacquelin', 'Haselup', to_date('1992-02-08', 'RRRR-MM-DD'), '5', 'Dunning', 'Topeka', 'KS', 'USA', '66667');
+
+
+
+
+
+
+-- Populate PAINTING_STYLE
+SET DEFINE OFF
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00001', '002');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00001', '001');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00002', '003');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00003', '004');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00003', '002');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00004', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00005', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00006', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00007', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00008', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00008', '003');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00009', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00010', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00010', '004');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00011', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00012', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00013', '002');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00014', '002');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00014', '001');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00014', '003');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00015', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00016', '005');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00017', '002');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00018', '002');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00018', '001');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00018', '004');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00019', '002');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00019', '001');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00020', '004');
+
+INSERT INTO PAINTING_STYLE ("Painting_ID", "Style_ID") 
+VALUES ('00020', '001');
+
+-- Populate PAINTING_SUBJECT
+SET DEFINE OFF
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00001', '101');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00001', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00001', '108');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00002', '100');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00002', '108');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00003', '102');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00004', '105');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00004', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00005', '106');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00005', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00006', '106');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00006', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00007', '104');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00007', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00008', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00008', '104');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00009', '105');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00010', '106');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00010', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00011', '106');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00011', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00012', '106');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00012', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00013', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00013', '104');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00014', '108');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00014', '106');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00014', '101');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00015', '105');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00015', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00016', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00017', '108');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00017', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00018', '104');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00018', '107');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00018', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00019', '108');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00019', '107');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00019', '103');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00020', '100');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00020', '101');
+
+INSERT INTO PAINTING_SUBJECT ("Painting_ID", "Subject_ID") 
+VALUES ('00020', '108');
+
+-- Populate CUSTOMER_ORDER
+SET DEFINE OFF
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00001', '00008', to_date('2018-01-21', 'RRRR-MM-DD'), to_date('2018-01-22', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00002', '00019', to_date('2018-12-27', 'RRRR-MM-DD'), to_date('2018-12-28', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00003', '00008', to_date('2017-01-08', 'RRRR-MM-DD'), to_date('2017-01-09', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00005', '00020', to_date('2017-05-08', 'RRRR-MM-DD'), to_date('2017-05-09', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00006', '00006', to_date('2016-08-29', 'RRRR-MM-DD'), to_date('2016-08-30', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00007', '00004', to_date('2018-06-03', 'RRRR-MM-DD'), to_date('2018-06-04', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00008', '00004', to_date('2018-03-31', 'RRRR-MM-DD'), to_date('2018-04-01', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00009', '00013', to_date('2016-08-03', 'RRRR-MM-DD'), to_date('2016-08-04', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00010', '00009', to_date('2018-07-28', 'RRRR-MM-DD'), to_date('2018-07-29', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00011', '00015', to_date('2017-04-23', 'RRRR-MM-DD'), to_date('2017-04-24', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00012', '00006', to_date('2018-05-05', 'RRRR-MM-DD'), to_date('2018-05-06', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00013', '00008', to_date('2017-10-03', 'RRRR-MM-DD'), to_date('2017-10-04', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00014', '00014', to_date('2019-01-11', 'RRRR-MM-DD'), to_date('2019-01-12', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00015', '00004', to_date('2018-06-08', 'RRRR-MM-DD'), to_date('2018-06-09', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00016', '00009', to_date('2017-03-08', 'RRRR-MM-DD'), to_date('2017-03-09', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00017', '00008', to_date('2016-09-01', 'RRRR-MM-DD'), to_date('2016-09-02', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00018', '00013', to_date('2018-07-05', 'RRRR-MM-DD'), to_date('2018-07-06', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00019', '00003', to_date('2017-11-11', 'RRRR-MM-DD'), to_date('2017-11-12', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00020', '00019', to_date('2018-07-08', 'RRRR-MM-DD'), to_date('2018-07-09', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00021', '00016', to_date('2018-11-26', 'RRRR-MM-DD'), to_date('2018-11-27', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00022', '00002', to_date('2017-06-16', 'RRRR-MM-DD'), to_date('2017-06-17', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00023', '00016', to_date('2018-01-16', 'RRRR-MM-DD'), to_date('2018-01-17', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00024', '00016', to_date('2018-05-14', 'RRRR-MM-DD'), to_date('2018-05-15', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00025', '00014', to_date('2016-08-04', 'RRRR-MM-DD'), to_date('2016-08-05', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00026', '00001', to_date('2017-04-03', 'RRRR-MM-DD'), to_date('2017-04-04', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00028', '00011', to_date('2016-07-28', 'RRRR-MM-DD'), to_date('2016-07-29', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00029', '00011', to_date('2017-02-10', 'RRRR-MM-DD'), to_date('2017-02-11', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00030', '00016', to_date('2017-10-19', 'RRRR-MM-DD'), to_date('2017-10-20', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00031', '00007', to_date('2016-06-06', 'RRRR-MM-DD'), to_date('2016-06-07', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00032', '00014', to_date('2017-10-25', 'RRRR-MM-DD'), to_date('2017-10-26', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00033', '00017', to_date('2017-02-26', 'RRRR-MM-DD'), to_date('2017-02-27', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00034', '00013', to_date('2016-03-02', 'RRRR-MM-DD'), to_date('2016-03-03', 'RRRR-MM-DD'));
+
+INSERT INTO CUSTOMER_ORDER ("Order_ID", "Customer_ID", "Date_created", "Date_shipped") 
+VALUES ('00035', '00016', to_date('2017-11-05', 'RRRR-MM-DD'), to_date('2017-11-06', 'RRRR-MM-DD'));
+
+-- Populate PAINTING_ORDER
+SET DEFINE OFF
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00001', '00012');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00001', '00005');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00002', '00014');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00002', '00019');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00003', '00006');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00003', '00011');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00003', '00010');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00003', '00012');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00005', '00011');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00005', '00020');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00005', '00009');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00005', '00015');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00006', '00002');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00006', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00006', '00006');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00007', '00006');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00007', '00018');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00007', '00014');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00007', '00003');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00007', '00012');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00007', '00009');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00008', '00020');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00009', '00012');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00009', '00017');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00009', '00019');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00009', '00007');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00010', '00014');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00011', '00018');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00011', '00002');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00012', '00018');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00012', '00003');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00012', '00017');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00012', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00013', '00001');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00013', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00014', '00009');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00014', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00015', '00001');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00015', '00018');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00015', '00014');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00016', '00005');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00016', '00018');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00016', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00017', '00009');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00017', '00019');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00017', '00012');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00018', '00007');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00018', '00014');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00018', '00017');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00018', '00010');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00018', '00002');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00018', '00015');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00018', '00012');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00018', '00006');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00019', '00017');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00020', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00020', '00019');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00021', '00018');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00021', '00006');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00022', '00002');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00022', '00014');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00022', '00011');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00023', '00002');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00023', '00001');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00024', '00012');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00024', '00001');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00024', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00025', '00017');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00026', '00006');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00028', '00019');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00028', '00009');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00028', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00029', '00010');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00029', '00013');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00030', '00008');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00030', '00004');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00030', '00006');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00030', '00016');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00031', '00007');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00031', '00001');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00032', '00018');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00032', '00011');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00032', '00008');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00033', '00002');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00033', '00003');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00034', '00018');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00034', '00003');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00034', '00001');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00034', '00007');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00035', '00016');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00035', '00001');
+
+INSERT INTO PAINTING_ORDER ("Order_ID", "Painting_ID") 
+VALUES ('00035', '00011');
+
+
+
+

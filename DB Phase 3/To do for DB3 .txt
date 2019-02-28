@@ -1,0 +1,3 @@
+We need to create edge cases so that we can do left and right joins ie we need to create records in one table that are not present in another table that the first table is in relation to
+
+We need to fix the date format

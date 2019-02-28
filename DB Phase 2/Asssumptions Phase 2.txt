@@ -1,0 +1,86 @@
+Only one employee can help per order, however each employee may make many sales
+
+To query for a date range of commission we will simply sum the date_created field of Customer_Order that is associated with Employee and make sure that it is in the correct range as well as is then multiplied by the employee's commission percentage.
+
+Commission as well as any kind of discount will be stored as a decimal ie 0.05 to represent 5% and it will be multiplied against any gross sum to create a final number
+
+We dont need a relationship with the discount table, to find if an item gets a discount we select it's date_created and then query the Discount table saying select discount_ID where date_created >= Discount.Start Date and <= Discount.End Date 
+
+States will be constrained to uppercase 2 letter abbreviations
+
+
+Added gender to customer (use alter)
+
+Changed State to an FK on Customer (ask Dr. Azarbod about this one)
+
+REGION PK is State and Region_ID
+
+addded CONSTRAINT UNIQUE_STATE UNIQUE ("State") to Customer because state is not a Primary key but it is referenced as a foreign key in the REGION Table
+
+Fixed the date / time formatting by editing the insert statements 
+
+Column naming structure is as follows: if it is more than one word ie first name, it is capitalized first word undercase lowercase ie First_name
+If it is 2 words and one is an acronym the acronym is all caps ie Employee_ID
+If it is only 1 word the word is caps ie Width
+Constraints are all uppercase and will be incremented ie EMPLOYEE_PK1 EMPLOYEE_PK2 etc
+
+States do not cross time zones, regions do not cross the timezone line ie Indiana is fully within the CT region
+
+CT : 
+MN
+WI
+IL
+TN
+MS
+AL
+LA
+AR
+MO
+IS
+ND
+SD
+NE
+KS
+OK
+TX
+
+MT:
+WY
+CO
+MT
+NM
+AZ
+UT
+ID
+
+WC:
+WA
+OR
+NV
+CA
+HA
+AK
+
+EC:
+ME
+VT
+NH
+MA
+RI
+CT
+NJ
+DE
+MD
+DC
+NC
+SC
+GA
+FL
+NY
+PA
+VA
+WV
+OH
+MI
+KY
+

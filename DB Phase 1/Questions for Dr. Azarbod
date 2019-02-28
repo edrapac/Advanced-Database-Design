@@ -1,0 +1,12 @@
+Questions for Dr. Azarbod
+
+So do start and end date for both employee and sale time have a start date field and an end date field? if so how do we handle "ongoing" conditions like current job or a current sale, is the end date value null then? Intentionally going to store a null value
+
+Start and end dates of sales will always be known, check with sysdate to see if it is still ongoing
+
+Discount - create table with ID's that correspond to discounts, 
+we need to decide if we want to base it off of membership time or during sales or customer loyalty
+
+What type of date format is best for the test to use?
+oracle format 
+dd-MON-yyyy - Dec
