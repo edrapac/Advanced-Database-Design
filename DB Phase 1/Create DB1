@@ -1,0 +1,13 @@
+CREATE USER PAINT
+  IDENTIFIED BY password
+  DEFAULT TABLESPACE USERS
+  TEMPORARY TABLESPACE TEMP
+  QUOTA 200M on USERS;
+
+GRANT create session TO PAINT;
+GRANT create table TO PAINT;
+GRANT create view TO PAINT;
+GRANT create any trigger TO PAINT;
+GRANT create any procedure TO PAINT;
+GRANT create sequence TO PAINT;
+GRANT create synonym TO PAINT;

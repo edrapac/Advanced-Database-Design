@@ -1,3 +1,14 @@
 We need to create edge cases so that we can do left and right joins ie we need to create records in one table that are not present in another table that the first table is in relation to
 
-We need to fix the date format
+We need to fix the date format to dd-MON-yyyy
+
+REQUIREMENTS
+Min  100 Customers
+
+Avg 3 orders per year
+	- We will just do a date range for 1 year, 2nd year and 3rd year of just like a day from both
+
+3 years for your DB
+10 products or more
+3 products per order
+10 employees

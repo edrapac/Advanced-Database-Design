@@ -1,0 +1,1980 @@
+DROP USER dchooter0
+;
+CREATE USER dchooter0
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO dchooter0
+;
+GRANT create table TO dchooter0
+;
+GRANT create view TO dchooter0
+;
+GRANT create any trigger TO dchooter0
+;
+GRANT create any procedure TO dchooter0
+;
+GRANT create sequence TO dchooter0
+;
+GRANT create synonym TO dchooter0
+;
+DROP USER hhayfield1
+;
+CREATE USER hhayfield1
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO hhayfield1
+;
+GRANT create table TO hhayfield1
+;
+GRANT create view TO hhayfield1
+;
+GRANT create any trigger TO hhayfield1
+;
+GRANT create any procedure TO hhayfield1
+;
+GRANT create sequence TO hhayfield1
+;
+GRANT create synonym TO hhayfield1
+;
+DROP USER jwilshire2
+;
+CREATE USER jwilshire2
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO jwilshire2
+;
+GRANT create table TO jwilshire2
+;
+GRANT create view TO jwilshire2
+;
+GRANT create any trigger TO jwilshire2
+;
+GRANT create any procedure TO jwilshire2
+;
+GRANT create sequence TO jwilshire2
+;
+GRANT create synonym TO jwilshire2
+;
+DROP USER mwinterburn3
+;
+CREATE USER mwinterburn3
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO mwinterburn3
+;
+GRANT create table TO mwinterburn3
+;
+GRANT create view TO mwinterburn3
+;
+GRANT create any trigger TO mwinterburn3
+;
+GRANT create any procedure TO mwinterburn3
+;
+GRANT create sequence TO mwinterburn3
+;
+GRANT create synonym TO mwinterburn3
+;
+DROP USER bricciardelli4
+;
+CREATE USER bricciardelli4
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bricciardelli4
+;
+GRANT create table TO bricciardelli4
+;
+GRANT create view TO bricciardelli4
+;
+GRANT create any trigger TO bricciardelli4
+;
+GRANT create any procedure TO bricciardelli4
+;
+GRANT create sequence TO bricciardelli4
+;
+GRANT create synonym TO bricciardelli4
+;
+DROP USER ariddick5
+;
+CREATE USER ariddick5
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ariddick5
+;
+GRANT create table TO ariddick5
+;
+GRANT create view TO ariddick5
+;
+GRANT create any trigger TO ariddick5
+;
+GRANT create any procedure TO ariddick5
+;
+GRANT create sequence TO ariddick5
+;
+GRANT create synonym TO ariddick5
+;
+DROP USER bgrafhom6
+;
+CREATE USER bgrafhom6
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bgrafhom6
+;
+GRANT create table TO bgrafhom6
+;
+GRANT create view TO bgrafhom6
+;
+GRANT create any trigger TO bgrafhom6
+;
+GRANT create any procedure TO bgrafhom6
+;
+GRANT create sequence TO bgrafhom6
+;
+GRANT create synonym TO bgrafhom6
+;
+DROP USER psambath7
+;
+CREATE USER psambath7
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO psambath7
+;
+GRANT create table TO psambath7
+;
+GRANT create view TO psambath7
+;
+GRANT create any trigger TO psambath7
+;
+GRANT create any procedure TO psambath7
+;
+GRANT create sequence TO psambath7
+;
+GRANT create synonym TO psambath7
+;
+DROP USER cdilke8
+;
+CREATE USER cdilke8
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO cdilke8
+;
+GRANT create table TO cdilke8
+;
+GRANT create view TO cdilke8
+;
+GRANT create any trigger TO cdilke8
+;
+GRANT create any procedure TO cdilke8
+;
+GRANT create sequence TO cdilke8
+;
+GRANT create synonym TO cdilke8
+;
+DROP USER ibroderick9
+;
+CREATE USER ibroderick9
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ibroderick9
+;
+GRANT create table TO ibroderick9
+;
+GRANT create view TO ibroderick9
+;
+GRANT create any trigger TO ibroderick9
+;
+GRANT create any procedure TO ibroderick9
+;
+GRANT create sequence TO ibroderick9
+;
+GRANT create synonym TO ibroderick9
+;
+DROP USER ecawkera
+;
+CREATE USER ecawkera
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ecawkera
+;
+GRANT create table TO ecawkera
+;
+GRANT create view TO ecawkera
+;
+GRANT create any trigger TO ecawkera
+;
+GRANT create any procedure TO ecawkera
+;
+GRANT create sequence TO ecawkera
+;
+GRANT create synonym TO ecawkera
+;
+DROP USER elibbieb
+;
+CREATE USER elibbieb
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO elibbieb
+;
+GRANT create table TO elibbieb
+;
+GRANT create view TO elibbieb
+;
+GRANT create any trigger TO elibbieb
+;
+GRANT create any procedure TO elibbieb
+;
+GRANT create sequence TO elibbieb
+;
+GRANT create synonym TO elibbieb
+;
+DROP USER wlathayec
+;
+CREATE USER wlathayec
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO wlathayec
+;
+GRANT create table TO wlathayec
+;
+GRANT create view TO wlathayec
+;
+GRANT create any trigger TO wlathayec
+;
+GRANT create any procedure TO wlathayec
+;
+GRANT create sequence TO wlathayec
+;
+GRANT create synonym TO wlathayec
+;
+DROP USER dadiscotd
+;
+CREATE USER dadiscotd
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO dadiscotd
+;
+GRANT create table TO dadiscotd
+;
+GRANT create view TO dadiscotd
+;
+GRANT create any trigger TO dadiscotd
+;
+GRANT create any procedure TO dadiscotd
+;
+GRANT create sequence TO dadiscotd
+;
+GRANT create synonym TO dadiscotd
+;
+DROP USER vmckennane
+;
+CREATE USER vmckennane
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO vmckennane
+;
+GRANT create table TO vmckennane
+;
+GRANT create view TO vmckennane
+;
+GRANT create any trigger TO vmckennane
+;
+GRANT create any procedure TO vmckennane
+;
+GRANT create sequence TO vmckennane
+;
+GRANT create synonym TO vmckennane
+;
+DROP USER jsneesbyf
+;
+CREATE USER jsneesbyf
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO jsneesbyf
+;
+GRANT create table TO jsneesbyf
+;
+GRANT create view TO jsneesbyf
+;
+GRANT create any trigger TO jsneesbyf
+;
+GRANT create any procedure TO jsneesbyf
+;
+GRANT create sequence TO jsneesbyf
+;
+GRANT create synonym TO jsneesbyf
+;
+DROP USER ffrendg
+;
+CREATE USER ffrendg
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ffrendg
+;
+GRANT create table TO ffrendg
+;
+GRANT create view TO ffrendg
+;
+GRANT create any trigger TO ffrendg
+;
+GRANT create any procedure TO ffrendg
+;
+GRANT create sequence TO ffrendg
+;
+GRANT create synonym TO ffrendg
+;
+DROP USER eschulzh
+;
+CREATE USER eschulzh
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO eschulzh
+;
+GRANT create table TO eschulzh
+;
+GRANT create view TO eschulzh
+;
+GRANT create any trigger TO eschulzh
+;
+GRANT create any procedure TO eschulzh
+;
+GRANT create sequence TO eschulzh
+;
+GRANT create synonym TO eschulzh
+;
+DROP USER rmenlowi
+;
+CREATE USER rmenlowi
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO rmenlowi
+;
+GRANT create table TO rmenlowi
+;
+GRANT create view TO rmenlowi
+;
+GRANT create any trigger TO rmenlowi
+;
+GRANT create any procedure TO rmenlowi
+;
+GRANT create sequence TO rmenlowi
+;
+GRANT create synonym TO rmenlowi
+;
+DROP USER bthomazinj
+;
+CREATE USER bthomazinj
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bthomazinj
+;
+GRANT create table TO bthomazinj
+;
+GRANT create view TO bthomazinj
+;
+GRANT create any trigger TO bthomazinj
+;
+GRANT create any procedure TO bthomazinj
+;
+GRANT create sequence TO bthomazinj
+;
+GRANT create synonym TO bthomazinj
+;
+DROP USER fmocquerk
+;
+CREATE USER fmocquerk
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO fmocquerk
+;
+GRANT create table TO fmocquerk
+;
+GRANT create view TO fmocquerk
+;
+GRANT create any trigger TO fmocquerk
+;
+GRANT create any procedure TO fmocquerk
+;
+GRANT create sequence TO fmocquerk
+;
+GRANT create synonym TO fmocquerk
+;
+DROP USER ybirkwoodl
+;
+CREATE USER ybirkwoodl
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ybirkwoodl
+;
+GRANT create table TO ybirkwoodl
+;
+GRANT create view TO ybirkwoodl
+;
+GRANT create any trigger TO ybirkwoodl
+;
+GRANT create any procedure TO ybirkwoodl
+;
+GRANT create sequence TO ybirkwoodl
+;
+GRANT create synonym TO ybirkwoodl
+;
+DROP USER yraittm
+;
+CREATE USER yraittm
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO yraittm
+;
+GRANT create table TO yraittm
+;
+GRANT create view TO yraittm
+;
+GRANT create any trigger TO yraittm
+;
+GRANT create any procedure TO yraittm
+;
+GRANT create sequence TO yraittm
+;
+GRANT create synonym TO yraittm
+;
+DROP USER shorribinen
+;
+CREATE USER shorribinen
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO shorribinen
+;
+GRANT create table TO shorribinen
+;
+GRANT create view TO shorribinen
+;
+GRANT create any trigger TO shorribinen
+;
+GRANT create any procedure TO shorribinen
+;
+GRANT create sequence TO shorribinen
+;
+GRANT create synonym TO shorribinen
+;
+DROP USER araubheimo
+;
+CREATE USER araubheimo
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO araubheimo
+;
+GRANT create table TO araubheimo
+;
+GRANT create view TO araubheimo
+;
+GRANT create any trigger TO araubheimo
+;
+GRANT create any procedure TO araubheimo
+;
+GRANT create sequence TO araubheimo
+;
+GRANT create synonym TO araubheimo
+;
+DROP USER ksarrap
+;
+CREATE USER ksarrap
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ksarrap
+;
+GRANT create table TO ksarrap
+;
+GRANT create view TO ksarrap
+;
+GRANT create any trigger TO ksarrap
+;
+GRANT create any procedure TO ksarrap
+;
+GRANT create sequence TO ksarrap
+;
+GRANT create synonym TO ksarrap
+;
+DROP USER rkilshallq
+;
+CREATE USER rkilshallq
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO rkilshallq
+;
+GRANT create table TO rkilshallq
+;
+GRANT create view TO rkilshallq
+;
+GRANT create any trigger TO rkilshallq
+;
+GRANT create any procedure TO rkilshallq
+;
+GRANT create sequence TO rkilshallq
+;
+GRANT create synonym TO rkilshallq
+;
+DROP USER bmushettr
+;
+CREATE USER bmushettr
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bmushettr
+;
+GRANT create table TO bmushettr
+;
+GRANT create view TO bmushettr
+;
+GRANT create any trigger TO bmushettr
+;
+GRANT create any procedure TO bmushettr
+;
+GRANT create sequence TO bmushettr
+;
+GRANT create synonym TO bmushettr
+;
+DROP USER gvaudreys
+;
+CREATE USER gvaudreys
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO gvaudreys
+;
+GRANT create table TO gvaudreys
+;
+GRANT create view TO gvaudreys
+;
+GRANT create any trigger TO gvaudreys
+;
+GRANT create any procedure TO gvaudreys
+;
+GRANT create sequence TO gvaudreys
+;
+GRANT create synonym TO gvaudreys
+;
+DROP USER fwoodsfordt
+;
+CREATE USER fwoodsfordt
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO fwoodsfordt
+;
+GRANT create table TO fwoodsfordt
+;
+GRANT create view TO fwoodsfordt
+;
+GRANT create any trigger TO fwoodsfordt
+;
+GRANT create any procedure TO fwoodsfordt
+;
+GRANT create sequence TO fwoodsfordt
+;
+GRANT create synonym TO fwoodsfordt
+;
+DROP USER mduesteru
+;
+CREATE USER mduesteru
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO mduesteru
+;
+GRANT create table TO mduesteru
+;
+GRANT create view TO mduesteru
+;
+GRANT create any trigger TO mduesteru
+;
+GRANT create any procedure TO mduesteru
+;
+GRANT create sequence TO mduesteru
+;
+GRANT create synonym TO mduesteru
+;
+DROP USER edisdelv
+;
+CREATE USER edisdelv
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO edisdelv
+;
+GRANT create table TO edisdelv
+;
+GRANT create view TO edisdelv
+;
+GRANT create any trigger TO edisdelv
+;
+GRANT create any procedure TO edisdelv
+;
+GRANT create sequence TO edisdelv
+;
+GRANT create synonym TO edisdelv
+;
+DROP USER bspringerw
+;
+CREATE USER bspringerw
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bspringerw
+;
+GRANT create table TO bspringerw
+;
+GRANT create view TO bspringerw
+;
+GRANT create any trigger TO bspringerw
+;
+GRANT create any procedure TO bspringerw
+;
+GRANT create sequence TO bspringerw
+;
+GRANT create synonym TO bspringerw
+;
+DROP USER lbowiex
+;
+CREATE USER lbowiex
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO lbowiex
+;
+GRANT create table TO lbowiex
+;
+GRANT create view TO lbowiex
+;
+GRANT create any trigger TO lbowiex
+;
+GRANT create any procedure TO lbowiex
+;
+GRANT create sequence TO lbowiex
+;
+GRANT create synonym TO lbowiex
+;
+DROP USER tsantusy
+;
+CREATE USER tsantusy
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO tsantusy
+;
+GRANT create table TO tsantusy
+;
+GRANT create view TO tsantusy
+;
+GRANT create any trigger TO tsantusy
+;
+GRANT create any procedure TO tsantusy
+;
+GRANT create sequence TO tsantusy
+;
+GRANT create synonym TO tsantusy
+;
+DROP USER cmckernz
+;
+CREATE USER cmckernz
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO cmckernz
+;
+GRANT create table TO cmckernz
+;
+GRANT create view TO cmckernz
+;
+GRANT create any trigger TO cmckernz
+;
+GRANT create any procedure TO cmckernz
+;
+GRANT create sequence TO cmckernz
+;
+GRANT create synonym TO cmckernz
+;
+DROP USER fbanes10
+;
+CREATE USER fbanes10
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO fbanes10
+;
+GRANT create table TO fbanes10
+;
+GRANT create view TO fbanes10
+;
+GRANT create any trigger TO fbanes10
+;
+GRANT create any procedure TO fbanes10
+;
+GRANT create sequence TO fbanes10
+;
+GRANT create synonym TO fbanes10
+;
+DROP USER kdundendale11
+;
+CREATE USER kdundendale11
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO kdundendale11
+;
+GRANT create table TO kdundendale11
+;
+GRANT create view TO kdundendale11
+;
+GRANT create any trigger TO kdundendale11
+;
+GRANT create any procedure TO kdundendale11
+;
+GRANT create sequence TO kdundendale11
+;
+GRANT create synonym TO kdundendale11
+;
+DROP USER bdoward12
+;
+CREATE USER bdoward12
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bdoward12
+;
+GRANT create table TO bdoward12
+;
+GRANT create view TO bdoward12
+;
+GRANT create any trigger TO bdoward12
+;
+GRANT create any procedure TO bdoward12
+;
+GRANT create sequence TO bdoward12
+;
+GRANT create synonym TO bdoward12
+;
+DROP USER ntremeer13
+;
+CREATE USER ntremeer13
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ntremeer13
+;
+GRANT create table TO ntremeer13
+;
+GRANT create view TO ntremeer13
+;
+GRANT create any trigger TO ntremeer13
+;
+GRANT create any procedure TO ntremeer13
+;
+GRANT create sequence TO ntremeer13
+;
+GRANT create synonym TO ntremeer13
+;
+DROP USER sponte14
+;
+CREATE USER sponte14
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO sponte14
+;
+GRANT create table TO sponte14
+;
+GRANT create view TO sponte14
+;
+GRANT create any trigger TO sponte14
+;
+GRANT create any procedure TO sponte14
+;
+GRANT create sequence TO sponte14
+;
+GRANT create synonym TO sponte14
+;
+DROP USER lcinavas15
+;
+CREATE USER lcinavas15
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO lcinavas15
+;
+GRANT create table TO lcinavas15
+;
+GRANT create view TO lcinavas15
+;
+GRANT create any trigger TO lcinavas15
+;
+GRANT create any procedure TO lcinavas15
+;
+GRANT create sequence TO lcinavas15
+;
+GRANT create synonym TO lcinavas15
+;
+DROP USER rkornalik16
+;
+CREATE USER rkornalik16
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO rkornalik16
+;
+GRANT create table TO rkornalik16
+;
+GRANT create view TO rkornalik16
+;
+GRANT create any trigger TO rkornalik16
+;
+GRANT create any procedure TO rkornalik16
+;
+GRANT create sequence TO rkornalik16
+;
+GRANT create synonym TO rkornalik16
+;
+DROP USER gaustick17
+;
+CREATE USER gaustick17
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO gaustick17
+;
+GRANT create table TO gaustick17
+;
+GRANT create view TO gaustick17
+;
+GRANT create any trigger TO gaustick17
+;
+GRANT create any procedure TO gaustick17
+;
+GRANT create sequence TO gaustick17
+;
+GRANT create synonym TO gaustick17
+;
+DROP USER cdalessio18
+;
+CREATE USER cdalessio18
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO cdalessio18
+;
+GRANT create table TO cdalessio18
+;
+GRANT create view TO cdalessio18
+;
+GRANT create any trigger TO cdalessio18
+;
+GRANT create any procedure TO cdalessio18
+;
+GRANT create sequence TO cdalessio18
+;
+GRANT create synonym TO cdalessio18
+;
+DROP USER dcoolican19
+;
+CREATE USER dcoolican19
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO dcoolican19
+;
+GRANT create table TO dcoolican19
+;
+GRANT create view TO dcoolican19
+;
+GRANT create any trigger TO dcoolican19
+;
+GRANT create any procedure TO dcoolican19
+;
+GRANT create sequence TO dcoolican19
+;
+GRANT create synonym TO dcoolican19
+;
+DROP USER achieco1a
+;
+CREATE USER achieco1a
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO achieco1a
+;
+GRANT create table TO achieco1a
+;
+GRANT create view TO achieco1a
+;
+GRANT create any trigger TO achieco1a
+;
+GRANT create any procedure TO achieco1a
+;
+GRANT create sequence TO achieco1a
+;
+GRANT create synonym TO achieco1a
+;
+DROP USER kkillgus1b
+;
+CREATE USER kkillgus1b
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO kkillgus1b
+;
+GRANT create table TO kkillgus1b
+;
+GRANT create view TO kkillgus1b
+;
+GRANT create any trigger TO kkillgus1b
+;
+GRANT create any procedure TO kkillgus1b
+;
+GRANT create sequence TO kkillgus1b
+;
+GRANT create synonym TO kkillgus1b
+;
+DROP USER ntoovey1c
+;
+CREATE USER ntoovey1c
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ntoovey1c
+;
+GRANT create table TO ntoovey1c
+;
+GRANT create view TO ntoovey1c
+;
+GRANT create any trigger TO ntoovey1c
+;
+GRANT create any procedure TO ntoovey1c
+;
+GRANT create sequence TO ntoovey1c
+;
+GRANT create synonym TO ntoovey1c
+;
+DROP USER rtimberlake1d
+;
+CREATE USER rtimberlake1d
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO rtimberlake1d
+;
+GRANT create table TO rtimberlake1d
+;
+GRANT create view TO rtimberlake1d
+;
+GRANT create any trigger TO rtimberlake1d
+;
+GRANT create any procedure TO rtimberlake1d
+;
+GRANT create sequence TO rtimberlake1d
+;
+GRANT create synonym TO rtimberlake1d
+;
+DROP USER kganforthe1e
+;
+CREATE USER kganforthe1e
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO kganforthe1e
+;
+GRANT create table TO kganforthe1e
+;
+GRANT create view TO kganforthe1e
+;
+GRANT create any trigger TO kganforthe1e
+;
+GRANT create any procedure TO kganforthe1e
+;
+GRANT create sequence TO kganforthe1e
+;
+GRANT create synonym TO kganforthe1e
+;
+DROP USER jschlag1f
+;
+CREATE USER jschlag1f
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO jschlag1f
+;
+GRANT create table TO jschlag1f
+;
+GRANT create view TO jschlag1f
+;
+GRANT create any trigger TO jschlag1f
+;
+GRANT create any procedure TO jschlag1f
+;
+GRANT create sequence TO jschlag1f
+;
+GRANT create synonym TO jschlag1f
+;
+DROP USER nvannah1g
+;
+CREATE USER nvannah1g
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO nvannah1g
+;
+GRANT create table TO nvannah1g
+;
+GRANT create view TO nvannah1g
+;
+GRANT create any trigger TO nvannah1g
+;
+GRANT create any procedure TO nvannah1g
+;
+GRANT create sequence TO nvannah1g
+;
+GRANT create synonym TO nvannah1g
+;
+DROP USER ochellam1h
+;
+CREATE USER ochellam1h
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ochellam1h
+;
+GRANT create table TO ochellam1h
+;
+GRANT create view TO ochellam1h
+;
+GRANT create any trigger TO ochellam1h
+;
+GRANT create any procedure TO ochellam1h
+;
+GRANT create sequence TO ochellam1h
+;
+GRANT create synonym TO ochellam1h
+;
+DROP USER rzecchini1i
+;
+CREATE USER rzecchini1i
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO rzecchini1i
+;
+GRANT create table TO rzecchini1i
+;
+GRANT create view TO rzecchini1i
+;
+GRANT create any trigger TO rzecchini1i
+;
+GRANT create any procedure TO rzecchini1i
+;
+GRANT create sequence TO rzecchini1i
+;
+GRANT create synonym TO rzecchini1i
+;
+DROP USER mharroll1j
+;
+CREATE USER mharroll1j
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO mharroll1j
+;
+GRANT create table TO mharroll1j
+;
+GRANT create view TO mharroll1j
+;
+GRANT create any trigger TO mharroll1j
+;
+GRANT create any procedure TO mharroll1j
+;
+GRANT create sequence TO mharroll1j
+;
+GRANT create synonym TO mharroll1j
+;
+DROP USER ylount1k
+;
+CREATE USER ylount1k
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ylount1k
+;
+GRANT create table TO ylount1k
+;
+GRANT create view TO ylount1k
+;
+GRANT create any trigger TO ylount1k
+;
+GRANT create any procedure TO ylount1k
+;
+GRANT create sequence TO ylount1k
+;
+GRANT create synonym TO ylount1k
+;
+DROP USER ajosiah1l
+;
+CREATE USER ajosiah1l
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ajosiah1l
+;
+GRANT create table TO ajosiah1l
+;
+GRANT create view TO ajosiah1l
+;
+GRANT create any trigger TO ajosiah1l
+;
+GRANT create any procedure TO ajosiah1l
+;
+GRANT create sequence TO ajosiah1l
+;
+GRANT create synonym TO ajosiah1l
+;
+DROP USER jgirardi1m
+;
+CREATE USER jgirardi1m
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO jgirardi1m
+;
+GRANT create table TO jgirardi1m
+;
+GRANT create view TO jgirardi1m
+;
+GRANT create any trigger TO jgirardi1m
+;
+GRANT create any procedure TO jgirardi1m
+;
+GRANT create sequence TO jgirardi1m
+;
+GRANT create synonym TO jgirardi1m
+;
+DROP USER eodwyer1n
+;
+CREATE USER eodwyer1n
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO eodwyer1n
+;
+GRANT create table TO eodwyer1n
+;
+GRANT create view TO eodwyer1n
+;
+GRANT create any trigger TO eodwyer1n
+;
+GRANT create any procedure TO eodwyer1n
+;
+GRANT create sequence TO eodwyer1n
+;
+GRANT create synonym TO eodwyer1n
+;
+DROP USER bbitchener1o
+;
+CREATE USER bbitchener1o
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bbitchener1o
+;
+GRANT create table TO bbitchener1o
+;
+GRANT create view TO bbitchener1o
+;
+GRANT create any trigger TO bbitchener1o
+;
+GRANT create any procedure TO bbitchener1o
+;
+GRANT create sequence TO bbitchener1o
+;
+GRANT create synonym TO bbitchener1o
+;
+DROP USER gmaides1p
+;
+CREATE USER gmaides1p
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO gmaides1p
+;
+GRANT create table TO gmaides1p
+;
+GRANT create view TO gmaides1p
+;
+GRANT create any trigger TO gmaides1p
+;
+GRANT create any procedure TO gmaides1p
+;
+GRANT create sequence TO gmaides1p
+;
+GRANT create synonym TO gmaides1p
+;
+DROP USER cbartolomeoni1q
+;
+CREATE USER cbartolomeoni1q
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO cbartolomeoni1q
+;
+GRANT create table TO cbartolomeoni1q
+;
+GRANT create view TO cbartolomeoni1q
+;
+GRANT create any trigger TO cbartolomeoni1q
+;
+GRANT create any procedure TO cbartolomeoni1q
+;
+GRANT create sequence TO cbartolomeoni1q
+;
+GRANT create synonym TO cbartolomeoni1q
+;
+DROP USER dmeanwell1r
+;
+CREATE USER dmeanwell1r
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO dmeanwell1r
+;
+GRANT create table TO dmeanwell1r
+;
+GRANT create view TO dmeanwell1r
+;
+GRANT create any trigger TO dmeanwell1r
+;
+GRANT create any procedure TO dmeanwell1r
+;
+GRANT create sequence TO dmeanwell1r
+;
+GRANT create synonym TO dmeanwell1r
+;
+DROP USER apaintain1s
+;
+CREATE USER apaintain1s
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO apaintain1s
+;
+GRANT create table TO apaintain1s
+;
+GRANT create view TO apaintain1s
+;
+GRANT create any trigger TO apaintain1s
+;
+GRANT create any procedure TO apaintain1s
+;
+GRANT create sequence TO apaintain1s
+;
+GRANT create synonym TO apaintain1s
+;
+DROP USER epessold1t
+;
+CREATE USER epessold1t
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO epessold1t
+;
+GRANT create table TO epessold1t
+;
+GRANT create view TO epessold1t
+;
+GRANT create any trigger TO epessold1t
+;
+GRANT create any procedure TO epessold1t
+;
+GRANT create sequence TO epessold1t
+;
+GRANT create synonym TO epessold1t
+;
+DROP USER hcosgrave1u
+;
+CREATE USER hcosgrave1u
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO hcosgrave1u
+;
+GRANT create table TO hcosgrave1u
+;
+GRANT create view TO hcosgrave1u
+;
+GRANT create any trigger TO hcosgrave1u
+;
+GRANT create any procedure TO hcosgrave1u
+;
+GRANT create sequence TO hcosgrave1u
+;
+GRANT create synonym TO hcosgrave1u
+;
+DROP USER jlicari1v
+;
+CREATE USER jlicari1v
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO jlicari1v
+;
+GRANT create table TO jlicari1v
+;
+GRANT create view TO jlicari1v
+;
+GRANT create any trigger TO jlicari1v
+;
+GRANT create any procedure TO jlicari1v
+;
+GRANT create sequence TO jlicari1v
+;
+GRANT create synonym TO jlicari1v
+;
+DROP USER bravilious1w
+;
+CREATE USER bravilious1w
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bravilious1w
+;
+GRANT create table TO bravilious1w
+;
+GRANT create view TO bravilious1w
+;
+GRANT create any trigger TO bravilious1w
+;
+GRANT create any procedure TO bravilious1w
+;
+GRANT create sequence TO bravilious1w
+;
+GRANT create synonym TO bravilious1w
+;
+DROP USER cpurkis1x
+;
+CREATE USER cpurkis1x
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO cpurkis1x
+;
+GRANT create table TO cpurkis1x
+;
+GRANT create view TO cpurkis1x
+;
+GRANT create any trigger TO cpurkis1x
+;
+GRANT create any procedure TO cpurkis1x
+;
+GRANT create sequence TO cpurkis1x
+;
+GRANT create synonym TO cpurkis1x
+;
+DROP USER kcrother1y
+;
+CREATE USER kcrother1y
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO kcrother1y
+;
+GRANT create table TO kcrother1y
+;
+GRANT create view TO kcrother1y
+;
+GRANT create any trigger TO kcrother1y
+;
+GRANT create any procedure TO kcrother1y
+;
+GRANT create sequence TO kcrother1y
+;
+GRANT create synonym TO kcrother1y
+;
+DROP USER vbennion1z
+;
+CREATE USER vbennion1z
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO vbennion1z
+;
+GRANT create table TO vbennion1z
+;
+GRANT create view TO vbennion1z
+;
+GRANT create any trigger TO vbennion1z
+;
+GRANT create any procedure TO vbennion1z
+;
+GRANT create sequence TO vbennion1z
+;
+GRANT create synonym TO vbennion1z
+;
+DROP USER emaestro20
+;
+CREATE USER emaestro20
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO emaestro20
+;
+GRANT create table TO emaestro20
+;
+GRANT create view TO emaestro20
+;
+GRANT create any trigger TO emaestro20
+;
+GRANT create any procedure TO emaestro20
+;
+GRANT create sequence TO emaestro20
+;
+GRANT create synonym TO emaestro20
+;
+DROP USER epovlsen21
+;
+CREATE USER epovlsen21
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO epovlsen21
+;
+GRANT create table TO epovlsen21
+;
+GRANT create view TO epovlsen21
+;
+GRANT create any trigger TO epovlsen21
+;
+GRANT create any procedure TO epovlsen21
+;
+GRANT create sequence TO epovlsen21
+;
+GRANT create synonym TO epovlsen21
+;
+DROP USER sredwood22
+;
+CREATE USER sredwood22
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO sredwood22
+;
+GRANT create table TO sredwood22
+;
+GRANT create view TO sredwood22
+;
+GRANT create any trigger TO sredwood22
+;
+GRANT create any procedure TO sredwood22
+;
+GRANT create sequence TO sredwood22
+;
+GRANT create synonym TO sredwood22
+;
+DROP USER bwoolf23
+;
+CREATE USER bwoolf23
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO bwoolf23
+;
+GRANT create table TO bwoolf23
+;
+GRANT create view TO bwoolf23
+;
+GRANT create any trigger TO bwoolf23
+;
+GRANT create any procedure TO bwoolf23
+;
+GRANT create sequence TO bwoolf23
+;
+GRANT create synonym TO bwoolf23
+;
+DROP USER wmalia24
+;
+CREATE USER wmalia24
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO wmalia24
+;
+GRANT create table TO wmalia24
+;
+GRANT create view TO wmalia24
+;
+GRANT create any trigger TO wmalia24
+;
+GRANT create any procedure TO wmalia24
+;
+GRANT create sequence TO wmalia24
+;
+GRANT create synonym TO wmalia24
+;
+DROP USER hmeddick25
+;
+CREATE USER hmeddick25
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO hmeddick25
+;
+GRANT create table TO hmeddick25
+;
+GRANT create view TO hmeddick25
+;
+GRANT create any trigger TO hmeddick25
+;
+GRANT create any procedure TO hmeddick25
+;
+GRANT create sequence TO hmeddick25
+;
+GRANT create synonym TO hmeddick25
+;
+DROP USER asaw26
+;
+CREATE USER asaw26
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO asaw26
+;
+GRANT create table TO asaw26
+;
+GRANT create view TO asaw26
+;
+GRANT create any trigger TO asaw26
+;
+GRANT create any procedure TO asaw26
+;
+GRANT create sequence TO asaw26
+;
+GRANT create synonym TO asaw26
+;
+DROP USER dandreoletti27
+;
+CREATE USER dandreoletti27
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO dandreoletti27
+;
+GRANT create table TO dandreoletti27
+;
+GRANT create view TO dandreoletti27
+;
+GRANT create any trigger TO dandreoletti27
+;
+GRANT create any procedure TO dandreoletti27
+;
+GRANT create sequence TO dandreoletti27
+;
+GRANT create synonym TO dandreoletti27
+;
+DROP USER mmeo28
+;
+CREATE USER mmeo28
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO mmeo28
+;
+GRANT create table TO mmeo28
+;
+GRANT create view TO mmeo28
+;
+GRANT create any trigger TO mmeo28
+;
+GRANT create any procedure TO mmeo28
+;
+GRANT create sequence TO mmeo28
+;
+GRANT create synonym TO mmeo28
+;
+DROP USER cwilbraham29
+;
+CREATE USER cwilbraham29
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO cwilbraham29
+;
+GRANT create table TO cwilbraham29
+;
+GRANT create view TO cwilbraham29
+;
+GRANT create any trigger TO cwilbraham29
+;
+GRANT create any procedure TO cwilbraham29
+;
+GRANT create sequence TO cwilbraham29
+;
+GRANT create synonym TO cwilbraham29
+;
+DROP USER ggronaver2a
+;
+CREATE USER ggronaver2a
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO ggronaver2a
+;
+GRANT create table TO ggronaver2a
+;
+GRANT create view TO ggronaver2a
+;
+GRANT create any trigger TO ggronaver2a
+;
+GRANT create any procedure TO ggronaver2a
+;
+GRANT create sequence TO ggronaver2a
+;
+GRANT create synonym TO ggronaver2a
+;
+DROP USER nlisamore2b
+;
+CREATE USER nlisamore2b
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO nlisamore2b
+;
+GRANT create table TO nlisamore2b
+;
+GRANT create view TO nlisamore2b
+;
+GRANT create any trigger TO nlisamore2b
+;
+GRANT create any procedure TO nlisamore2b
+;
+GRANT create sequence TO nlisamore2b
+;
+GRANT create synonym TO nlisamore2b
+;
+DROP USER mbryett2c
+;
+CREATE USER mbryett2c
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO mbryett2c
+;
+GRANT create table TO mbryett2c
+;
+GRANT create view TO mbryett2c
+;
+GRANT create any trigger TO mbryett2c
+;
+GRANT create any procedure TO mbryett2c
+;
+GRANT create sequence TO mbryett2c
+;
+GRANT create synonym TO mbryett2c
+;
+DROP USER emacguffog2d
+;
+CREATE USER emacguffog2d
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO emacguffog2d
+;
+GRANT create table TO emacguffog2d
+;
+GRANT create view TO emacguffog2d
+;
+GRANT create any trigger TO emacguffog2d
+;
+GRANT create any procedure TO emacguffog2d
+;
+GRANT create sequence TO emacguffog2d
+;
+GRANT create synonym TO emacguffog2d
+;
+DROP USER zbrear2e
+;
+CREATE USER zbrear2e
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO zbrear2e
+;
+GRANT create table TO zbrear2e
+;
+GRANT create view TO zbrear2e
+;
+GRANT create any trigger TO zbrear2e
+;
+GRANT create any procedure TO zbrear2e
+;
+GRANT create sequence TO zbrear2e
+;
+GRANT create synonym TO zbrear2e
+;
+DROP USER lsessions2f
+;
+CREATE USER lsessions2f
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO lsessions2f
+;
+GRANT create table TO lsessions2f
+;
+GRANT create view TO lsessions2f
+;
+GRANT create any trigger TO lsessions2f
+;
+GRANT create any procedure TO lsessions2f
+;
+GRANT create sequence TO lsessions2f
+;
+GRANT create synonym TO lsessions2f
+;
+DROP USER alasham2g
+;
+CREATE USER alasham2g
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO alasham2g
+;
+GRANT create table TO alasham2g
+;
+GRANT create view TO alasham2g
+;
+GRANT create any trigger TO alasham2g
+;
+GRANT create any procedure TO alasham2g
+;
+GRANT create sequence TO alasham2g
+;
+GRANT create synonym TO alasham2g
+;
+DROP USER aquidenham2h
+;
+CREATE USER aquidenham2h
+
+IDENTIFIED BY password
+DEFAULT TABLESPACE USERS
+TEMPORARY TABLESPACE TEMP
+QUOTA 200M on USERS;
+GRANT create session TO aquidenham2h
+;
+GRANT create table TO aquidenham2h
+;
+GRANT create view TO aquidenham2h
+;
+GRANT create any trigger TO aquidenham2h
+;
+GRANT create any procedure TO aquidenham2h
+;
+GRANT create sequence TO aquidenham2h
+;
+GRANT create synonym TO aquidenham2h
+;
