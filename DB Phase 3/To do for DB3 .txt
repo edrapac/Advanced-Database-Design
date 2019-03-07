@@ -1,14 +1,16 @@
-We need to create edge cases so that we can do left and right joins ie we need to create records in one table that are not present in another table that the first table is in relation to
-
+We need to create edge cases so that we can do left and right joins ie we need to create records in one table that are not present in another table that the first table is in relation to (ie customers that dont have an order )
+* Added gender to customer not using update 
+* Removed country
 We need to fix the date format to dd-MON-yyyy
+we need to lowercase all the column names 
 
 REQUIREMENTS
-Min  100 Customers
+Min  100 Customers Done - 200
 
 Avg 3 orders per year
 	- We will just do a date range for 1 year, 2nd year and 3rd year of just like a day from both
 
-3 years for your DB
-10 products or more
-3 products per order
+3 years for your DB Done
+10 products or more Done
+3 products per order Done
 10 employees
