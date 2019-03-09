@@ -1,24 +1,115 @@
+# Cheat Sheet for Midterm IT 440 Spring 2019
+
+### Remember that the midterm is on Thursday, March 14th.
+
+### Recommended Resources:
+All the stuff here is basically from the D2L page. The RDBMS manager I use is a really good one called DataGrip from JetBrains, it's free and a lot better than Oracle's in my opinion
+
+## General Oracle Specific Commands
+
+### Shows all the column names in a certain table
+
 select column_name from all_tab_columns Where TABLE_NAME = 'your_table_here' ;
-Shows all the column names in a certain table
+
+
+### Is how to alter tables, in this instance it adds a column
 
 ALTER TABLE table_name
   ADD column_name datatype;
 
-Is how to alter tables, in this instance it adds a column
+### Updates the table customer, inserts the value 'M' for gender where customer_id = 00001
 
 UPDATE CUSTOMER SET Gender = 'M' WHERE "Customer_ID"='00001';
 
-Updates the table customer, inserts the value 'M' for gender where customer_id = 00001
-
+### Adds a constraint that checks if the value entered for State is uppercase
 ALTER TABLE CUSTOMER
   ADD CONSTRAINT STATE_CHECK CHECK ("State" = upper("State"));
 
-NVL tells us what to do with NULL Values
+### NVL tells us what to do with NULL Values, if there is a null value for Tell_Number, reply with Not Available
 
 SELECT Tell_Number, NVL(Tell_Number,'Not available') as NVL_USE
 From CUSTOMER
 
-Tells us that if there is a null value the string 'Not available' will be applied
-
+### General Constraint for checking a condition
 ALTER TABLE table_name 
 ADD CONSTRAINT MyUniqueConstraint CHECK (CONDITION);
+
+SELECT * from v$version -- provides the installed version of oracle as well as install info
+
+## Database Specific, May need to be altered slightly for your specific database
+
+### The following are taken from Azarbods file Contents > SQL > SQL Basics using my database (populate for that also found in this repo)
+
+I've ommitted some of the really basic questions...
+
+### SQL I.2: Produce a list of commission for all employee, showing only employee number, first and last names, and commission. 
+
+SELECT DISTINCT(E.EMPLOYEE_ID), E.FIRST_NAME, E.LAST_NAME,  JT.SALES_COMISSION,JT.JOB_ID, SUM(P.PRICE) TotalSales,
+               (SUM(P.PRICE) * SALES_COMISSION) TotalComission
+
+FROM EMPLOYEE E
+JOIN JOB_HISTORY JH on E.EMPLOYEE_ID = JH.EMPLOYEE_ID
+JOIN JOB_TITLE JT on JH.JOB_ID = JT.JOB_ID
+JOIN CUSTOMER_ORDER CO on E.EMPLOYEE_ID = CO.EMPLOYEE_ID
+JOIN PAINTING_ORDER PO on CO.ORDER_ID = PO.ORDER_ID
+JOIN PAINTING P on PO.PAINTING_ID = P.PAINTING_ID
+WHERE JT.SALES_COMISSION IS NOT NULL
+GROUP BY E.EMPLOYEE_ID, E.FIRST_NAME, E.LAST_NAME,JT.SALES_COMISSION,JT.JOB_ID;
+
+Lots of Joins in this one, should probably clean it up but ¯\_(ツ)_/¯
+
+
+### SQL I.3: List the product number of all the products those have been ordered. 
+
+SELECT DISTINCT(P.PAINTING_ID), P.TITLE
+FROM PAINTING P;
+
+
+### SQL I.4: Produce a list of monthly commission for all employee, showing employee number, first and last names, and  commission details.
+
+SELECT DISTINCT(E.EMPLOYEE_ID), E.FIRST_NAME, E.LAST_NAME,  JT.SALES_COMISSION,JT.JOB_ID, SUM(P.PRICE) TotalSales,
+               ROUND(((SUM(P.PRICE) * SALES_COMISSION)/12),2) TotalComission
+
+
+FROM EMPLOYEE E
+JOIN JOB_HISTORY JH on E.EMPLOYEE_ID = JH.EMPLOYEE_ID
+JOIN JOB_TITLE JT on JH.JOB_ID = JT.JOB_ID
+JOIN CUSTOMER_ORDER CO on E.EMPLOYEE_ID = CO.EMPLOYEE_ID
+JOIN PAINTING_ORDER PO on CO.ORDER_ID = PO.ORDER_ID
+JOIN PAINTING P on PO.PAINTING_ID = P.PAINTING_ID
+WHERE JT.SALES_COMISSION IS NOT NULL
+GROUP BY E.EMPLOYEE_ID, E.FIRST_NAME, E.LAST_NAME,JT.SALES_COMISSION,JT.JOB_ID;
+
+### SQL I.5: List all employee with a commission greater than 80,000.
+
+A note on this one: Since total comission per employee is an aggregate field for me I had to use a HAVING field to filter on TotalComission
+
+SELECT DISTINCT(E.EMPLOYEE_ID), E.FIRST_NAME, E.LAST_NAME,  JT.SALES_COMISSION,JT.JOB_ID, SUM(P.PRICE) TotalSales,
+               (SUM(P.PRICE) * SALES_COMISSION) TotalComission
+
+
+FROM EMPLOYEE E
+JOIN JOB_HISTORY JH on E.EMPLOYEE_ID = JH.EMPLOYEE_ID
+JOIN JOB_TITLE JT on JH.JOB_ID = JT.JOB_ID
+JOIN CUSTOMER_ORDER CO on E.EMPLOYEE_ID = CO.EMPLOYEE_ID
+JOIN PAINTING_ORDER PO on CO.ORDER_ID = PO.ORDER_ID
+JOIN PAINTING P on PO.PAINTING_ID = P.PAINTING_ID
+WHERE JT.SALES_COMISSION IS NOT NULL
+HAVING (SUM(P.PRICE) * SALES_COMISSION) > 80000
+GROUP BY E.EMPLOYEE_ID, E.FIRST_NAME, E.LAST_NAME, JT.SALES_COMISSION, JT.JOB_ID;
+
+### SQL I.7: List all employee with a commission between 60,000 and 80,000. 
+
+SELECT DISTINCT(E.EMPLOYEE_ID), E.FIRST_NAME, E.LAST_NAME,  JT.SALES_COMISSION,JT.JOB_ID, SUM(P.PRICE) TotalSales,
+               (SUM(P.PRICE) * SALES_COMISSION) TotalComission
+
+
+FROM EMPLOYEE E
+JOIN JOB_HISTORY JH on E.EMPLOYEE_ID = JH.EMPLOYEE_ID
+JOIN JOB_TITLE JT on JH.JOB_ID = JT.JOB_ID
+JOIN CUSTOMER_ORDER CO on E.EMPLOYEE_ID = CO.EMPLOYEE_ID
+JOIN PAINTING_ORDER PO on CO.ORDER_ID = PO.ORDER_ID
+JOIN PAINTING P on PO.PAINTING_ID = P.PAINTING_ID
+WHERE JT.SALES_COMISSION IS NOT NULL
+HAVING (SUM(P.PRICE) * SALES_COMISSION) BETWEEN 60000 AND 80000
+GROUP BY E.EMPLOYEE_ID, E.FIRST_NAME, E.LAST_NAME, JT.SALES_COMISSION, JT.JOB_ID;
