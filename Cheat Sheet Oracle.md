@@ -9,7 +9,7 @@ All the stuff here is basically from the D2L page. The RDBMS manager I use is a 
 
 ### Shows all the column names in a certain table
 
-select column_name from all_tab_columns Where TABLE_NAME = 'your_table_here' ;
+`select column_name from all_tab_columns Where TABLE_NAME = 'your_table_here' ;`
 
 ### Convert an average to decimal and filter on condition 
 
