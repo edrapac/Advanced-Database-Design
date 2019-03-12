@@ -220,7 +220,11 @@ GROUP BY SUBSTR(CO.DATE_CREATED,4,3)`
 
 ### 7. List unique pairs of customers that are from the same city 
 
-Will ask Azarbod about this one...
+`SELECT C1.FIRST_NAME, C1.LAST_NAME,
+       C2.FIRST_NAME, C2.LAST_NAME,C1.CITY
+FROM CUSTOMER C1, CUSTOMER C2
+WHERE C1.CITY <= C2.CITY AND C1.FIRST_NAME > C2.FIRST_NAME
+  AND C1.LAST_NAME > C2.LAST_NAME;`
 
 ### 8. List total sales for each product and calculate the percentage of their sale compared to total sale. 
 `SELECT P.TITLE,SUM(P.PRICE) as TotalPrice,
