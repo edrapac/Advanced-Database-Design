@@ -258,3 +258,171 @@ Select Ranking_Table.CUSTOMER_ID, Ranking_Table.FIRST_NAME,
        Ranking_Table.TotalOrdered
 FROM Ranking_Table
 WHERE Ranking_Table.Top_Customer =1`
+
+## SP 30 Questions
+
+
+Answer the following queries using SP database
+1)  Give the top 2 and bottom 2 parts based on their shipped quantity.
+`WITH RangeTable AS
+  (SELECT S2.QTY, NTILE(10)
+  OVER( ORDER BY COUNT (S.SNAME) DESC) AS Range
+  FROM S
+  JOIN SP S2 on S.S# = S2.S#
+  JOIN P P2 on S2.P# = P2.P#
+  GROUP BY S2.QTY )
+SELECT *
+FROM RangeTable
+WHERE Range IN (1,2) OR Range IN (9,10)`
+
+2)  Give the supplier name that supplies the maximum quantity of parts.
+`SELECT S.SNAME, MAX(S2.QTY)
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+WHERE S2.QTY =
+      (
+        SELECT MAX(S2.QTY)
+        FROM SP S2
+        )`
+
+3)  Give the name of the supplier whose supplies red parts and whose weight > 10.
+
+`SELECT DISTINCT S.SNAME
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+WHERE P2.COLOR LIKE 'Red' AND P2.WEIGHT > 10;`
+
+Give all the part numbers that are from the same city
+`SELECT P1.PNAME, P2.PNAME, P1.CITY
+FROM P P1, P P2
+WHERE P1.PNAME <= P2.PNAME
+  AND P1.CITY = P2.CITY`
+
+6)  Give the supplier and part that come from the same city
+
+`SELECT S1.SNAME, S2.SNAME, P1.PNAME
+FROM S S1, S S2
+JOIN SP SP3 on S2.S# = SP3.S#
+JOIN P P1 on SP3.P# = P1.P#
+WHERE S1.CITY <= S2.CITY`
+
+7)  Give the part name that has the minimum quantity
+8)  Give how many parts each supplier has and the total qty each part has.
+9)  Give the names of the suppliers who supplies the most pats and least part
+10) Give the total quantity of all the blue parts
+11) Give the suppliers that are not from the city from which smith is.
+`SELECT SNAME
+FROM S
+WHERE CITY NOT LIKE 'London'`
+12) Change all the parts that come from London to as those coming from Mankato
+`UPDATE S SET City = 'Mankato'
+WHERE CITY = 'London';`
+13) Give the top and bottom suppliers based on the quantity they supply.
+`WITH RTable AS (SELECT S#, QTY,
+                RANK() over (PARTITION BY QTY ORDER BY S# DESC) AS Ranking
+                FROM SP)
+SELECT DISTINCT RTable.S#
+FROM RTable
+HAVING MAX(RTable.Ranking) >2 OR MIN(RTable.Ranking) =1
+GROUP BY S#;
+OR
+SELECT DISTINCT(S.SNAME), S2.QTY
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+WHERE S2.QTY =
+      (SELECT MIN(S2.QTY)
+        FROM SP S2)UNION
+SELECT DISTINCT(S.SNAME), S2.QTY
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+WHERE S2.QTY =
+      (SELECT MAX(S2.QTY)
+        FROM SP S2)
+ORDER BY 2;`
+
+14) Give the top 3 parts that weigh the most.
+`WITH RTable AS (SELECT P#, WEIGHT,RANK() over (ORDER BY WEIGHT) Ranking
+                FROM P)
+SELECT RTable.P#,  RTable.Ranking, RTable.WEIGHT
+FROM RTable
+WHERE Ranking <=4
+GROUP BY P#,RTable.Ranking, RTable.WEIGHT
+ORDER BY Ranking;`
+
+15) Give all the parts that are not from London and whose color is not blue
+`SELECT P2.PNAME
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+WHERE S.CITY NOT LIKE 'London'
+AND P2.COLOR NOT LIKE 'Blue'`
+
+16) Give the total quantity supplied by each supplier and his name
+`SELECT S.S#,S.SNAME, SUM(S2.QTY) SumQTY
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+GROUP BY S.S#, S.SNAME`
+
+17) Give the name of the supplier that supplies a red part.
+`SELECT DISTINCT S.S#,S.SNAME
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+WHERE P2.COLOR LIKE 'Red'`
+
+18) Give the name of parts from supplier from Paris with qty>100 and part is from Paris
+`SELECT DISTINCT P2.PNAME
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+WHERE S2.QTY > 100 AND P2.CITY LIKE 'Paris'`
+
+19) Give the total weight of all the red parts
+`SELECT DISTINCT SUM(P2.WEIGHT) TotalWeight
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+WHERE P2.COLOR LIKE 'Red'`
+
+20) Give the names of the suppliers that are from the same city
+`SELECT S1.SNAME ,S2.SNAME, S1.CITY
+FROM S S1, S S2
+WHERE S1.CITY <= S2.CITY AND S1.SNAME >= S2.SNAME`
+
+21) Give the supplier name that supplies the minimum quantity of parts
+`SELECT DISTINCT S.SNAME
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+WHERE S2.QTY =
+      (SELECT MIN(S2.QTY) as MinQty
+        FROM SP S2)`
+
+22) Give the total quantity present for each part
+`SELECT DISTINCT P2.PNAME,SUM(S2.QTY) TotalQty
+FROM S
+JOIN SP S2 on S.S# = S2.S#
+JOIN P P2 on S2.P# = P2.P#
+GROUP BY P2.PNAME`
+
+
+
+23) Give the part name that has the maximum quantity
+24) Give the suppliers and parts that come from the London
+25) Give the total qty for all the parts
+26) Give the max number of parts supplied by a supplier
+27) Give the name of parts from supplier from London with qty>100 and part is from London
+28) Give the name of the supplier that supplies both red part and weight is 14.
+29) Rank suppliers on the total quantity and number of parts
+30) Give the subtotals of the total part weights of the all the parts supplied by a supplier and give the final total weight.
+31) What is the percentage of total shipments from each supplier
+32) For each part color, list the top two suppliers with highest qty shipped. 
+33) What is the top one third of shipments. List supplier number and qty.
+
+
+
+
+
