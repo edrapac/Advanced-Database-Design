@@ -33,6 +33,16 @@ All the stuff here is basically from the D2L page. The RDBMS manager I use is a 
 `SELECT Tell_Number, NVL(Tell_Number,'Not available') as NVL_USE
 From CUSTOMER`
 
+### Ranking Stuff
+
+`SELECT rs.Field1,rs.Field2 
+    FROM (
+        SELECT Field1,Field2, Rank() 
+          over (Partition BY Section
+                ORDER BY RankCriteria DESC ) AS Rank
+        FROM table
+        ) rs WHERE Rank = Something`
+
 ### General Constraint for checking a condition
 `ALTER TABLE table_name 
 ADD CONSTRAINT MyUniqueConstraint CHECK (CONDITION);`
@@ -232,4 +242,15 @@ LEFT JOIN CUSTOMER_ORDER CO on C.CUSTOMER_ID = CO.CUSTOMER_ID
 WHERE CO.CUSTOMER_ID IS NULL;`
 
 ### 10. List customers (customer number, last name) with highest total purchase (rank one) for each state. 
-l
+`WITH Ranking_Table As (SELECT C.CUSTOMER_ID, C.FIRST_NAME, C.STATE, SUM(P.PRICE) TotalOrdered,
+       Rank() over (PARTITION BY C.STATE ORDER BY SUM(P.PRICE)) as Top_Customer
+FROM CUSTOMER C
+JOIN CUSTOMER_ORDER CO on C.CUSTOMER_ID = CO.CUSTOMER_ID
+JOIN PAINTING_ORDER PO on CO.ORDER_ID = PO.ORDER_ID
+JOIN PAINTING P on PO.PAINTING_ID = P.PAINTING_ID
+GROUP BY C.CUSTOMER_ID, C.FIRST_NAME, CO.CUSTOMER_ID, C.STATE)
+Select Ranking_Table.CUSTOMER_ID, Ranking_Table.FIRST_NAME,
+       Ranking_Table.STATE,
+       Ranking_Table.TotalOrdered
+FROM Ranking_Table
+WHERE Ranking_Table.Top_Customer =1`
