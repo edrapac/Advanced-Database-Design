@@ -259,6 +259,12 @@ Select Ranking_Table.CUSTOMER_ID, Ranking_Table.FIRST_NAME,
 FROM Ranking_Table
 WHERE Ranking_Table.Top_Customer =1`
 
+
+### Select Orders that are made within Discount Peroids
+`SELECT CO.ORDER_ID,CO.DATE_CREATED, DS.START_DATE
+FROM CUSTOMER_ORDER CO, DISCOUNT_SALES DS
+WHERE CO.DATE_CREATED >= DS.START_DATE AND CO.DATE_CREATED <= DS.END_DATE`
+
 ## SP 30 Questions
 
 
