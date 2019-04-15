@@ -1,0 +1,75 @@
+/**
+TODO:
+CREATE OBJECTS FOR:
+---------------------
+PERSON - (Lastname, Firstname, Age, DOB) DONE	
+	|-EMPLOYEE - (Gender, Position, Comission,Start_date,End_date)
+
+	|- CUSTOMER (Orders, PERSON)
+
+ADDRESS - (Street, City, State, Zip) DONE
+
+Add orders to the order array now
+
+Employee Table must now have a column EMPLOYEE
+Employee Table must now have a column ADDRESS
+Customer Table must now have a column ADDRESS
+Customer Table must now have a column CUSTOMER
+
+All tables must now be prefaced with a P_TableName
+
+
+**/
+DROP TYPE PER_P FORCE;
+CREATE OR REPLACE TYPE PER_P AS OBJECT
+(
+LAST_NAME VARCHAR(20),
+FIRST_NAME VARCHAR(20),
+DOB DATE,
+GENDER CHAR (1),
+MEMBER FUNCTION AGE RETURN NUMBER,
+PRAGMA RESTRICT_REFERENCES(AGE,WNDS)
+)
+NOT FINAL;
+/
+
+CREATE OR REPLACE TYPE EMP_P UNDER PER_P --this will just hold the generic job titles and rates instead of a job title table
+
+(
+POSITION VARCHAR(15),
+JOB_ID VARCHAR(5),
+RATE NUMBER,
+COMISSION DECIMAL(1,2)
+);
+/
+
+CREATE OR REPLACE TYPE CUST_ORDERS_ARR AS VARRAY(4)
+OF NUMBER (38);
+/
+
+CREATE OR REPLACE TYPE CUST_P UNDER PER_P
+(
+ORDER_SUMMARY CUST_ORDERS_ARR
+);
+/
+
+CREATE OR REPLACE TYPE ADDRESS_P AS OBJECT
+(
+STREET_NUMBER VARCHAR2(10),
+STREET_NAME VARCHAR2(30),
+CITY VARCHAR2(30),
+STATE VARCHAR2(2),
+POSTAL_CODE NUMBER(10)
+);
+/
+
+CREATE OR REPLACE TYPE BODY PER_P AS 
+MEMBER FUNCTION AGE RETURN NUMBER
+IS
+	V_AGE NUMBER;
+	BEGIN
+		V_AGE := TRUNC((SYSDATE-SELF.DOB)/365.25);
+		RETURN V_AGE;
+	END;
+END;
+/

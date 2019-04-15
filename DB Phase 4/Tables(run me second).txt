@@ -1,0 +1,142 @@
+drop table P_CUSTOMER cascade constraints;
+drop table STYLES cascade constraints;
+drop table SUBJECT cascade constraints;
+drop table ARTIST cascade constraints;
+drop table PAINTING cascade constraints;
+drop table PAINTING_STYLE cascade constraints;
+drop table CUSTOMER_ORDER cascade constraints;
+drop table PAINTING_ORDER cascade constraints;
+drop table PAINTING_SUBJECT cascade constraints;
+drop table P_EMPLOYEE cascade constraints;
+drop table REGION cascade constraints;
+drop table JOB_HISTORY cascade constraints;
+drop table DISCOUNT_SALES cascade constraints;
+
+
+
+
+
+CREATE TABLE P_EMPLOYEE
+  ( employee_ID VARCHAR(5) not null,
+    employee EMP_P,
+    ADDRESS ADDRESS_P,
+    CONSTRAINT EMPLOYEE_PK PRIMARY KEY (employee_ID));
+    -- We dont need a nested address tab table because we dont use address tab
+
+
+
+
+
+CREATE TABLE JOB_HISTORY
+(
+  history_id VARCHAR(5) not null,
+  employee_ID VARCHAR(5) not null,
+  job_id VARCHAR(5) not null,
+  start_date DATE,
+  end_date DATE,
+  CONSTRAINT JOB_HISTORY_PK PRIMARY KEY (history_id),
+  CONSTRAINT JOB_HISTORY_FK1 FOREIGN KEY (employee_ID) REFERENCES P_EMPLOYEE(employee_ID));
+
+CREATE TABLE DISCOUNT_SALES
+( discount_id VARCHAR(5) not null,
+  start_date DATE,
+  end_date DATE,
+  discount_percent DECIMAL(1,2),
+  CONSTRAINT DISCOUNT_SALES_PK1 PRIMARY KEY (discount_id)
+);
+
+CREATE TABLE REGION 
+(
+  region_id VARCHAR(1) not null,
+  timezone VARCHAR(3) not null,
+  CONSTRAINT REGION_PK1 PRIMARY KEY (region_id)
+
+);
+
+CREATE TABLE P_CUSTOMER 
+  (customer_id VARCHAR(5) not null, 
+  CUSTOMER CUST_P,
+  ADDRESS ADDRESS_P,
+  region_id VARCHAR(1) not null,
+  CONSTRAINT CUSTOMER_PK1 PRIMARY KEY (customer_id),
+  CONSTRAINT CUSTOMER_FK1 FOREIGN KEY (region_id) REFERENCES REGION(region_id));
+
+
+
+CREATE TABLE SUBJECT (
+  subject_id VARCHAR(5) not null,
+  subject VARCHAR(100) not null,
+  description VARCHAR(100),
+  PRIMARY KEY (subject_id)
+);
+
+CREATE TABLE STYLES (
+  style_id VARCHAR(3) not null,
+  style_name VARCHAR(100),
+  style_description VARCHAR(150),
+  CONSTRAINT STYLES_PK PRIMARY KEY (style_id)
+);
+
+CREATE TABLE ARTIST (
+  artist_id VARCHAR(3) not null,
+  first_name VARCHAR(20) not null,
+  last_name VARCHAR(20) not null,
+  date_birth VARCHAR(4),
+  date_death VARCHAR(4),
+  CONSTRAINT Artist_PK PRIMARY KEY (artist_id)
+);
+
+CREATE TABLE PAINTING (
+  painting_ID VARCHAR(5) not null,
+  artist_id VARCHAR(3) not null,
+  title VARCHAR(100) not null,
+  description VARCHAR(200) ,
+  year_painted VARCHAR(4),
+  height VARCHAR(5),
+  width VARCHAR(5),
+  price VARCHAR(7),
+  CONSTRAINT Painting_PK PRIMARY KEY (painting_ID),
+  CONSTRAINT Painting_FK FOREIGN KEY (artist_id) REFERENCES ARTIST(artist_id)
+);
+
+CREATE TABLE CUSTOMER_ORDER (
+  order_id VARCHAR(5) not null,
+  employee_id VARCHAR(5) not null,
+  customer_id VARCHAR(5) not null,
+  date_created DATE,
+  date_shipped DATE,
+  CONSTRAINT Customer_Order_PK PRIMARY KEY (order_id),
+  CONSTRAINT Customer_Order_FK1 FOREIGN KEY (customer_id) REFERENCES P_CUSTOMER(customer_id),
+  CONSTRAINT Customer_Order_FK2 FOREIGN KEY (employee_ID) REFERENCES P_EMPLOYEE(employee_id)
+
+);
+
+
+
+
+CREATE TABLE PAINTING_ORDER (
+  order_id VARCHAR(5) not null,
+  painting_ID VARCHAR(5) not null,
+  painting_qty VARCHAR(5),
+  CONSTRAINT PAINTING_ORDER PRIMARY KEY (painting_ID, order_id),
+  CONSTRAINT Painting_Order_FK1 FOREIGN KEY (order_id) REFERENCES CUSTOMER_ORDER(order_id),
+  CONSTRAINT Painting_Order_FK2 FOREIGN KEY (painting_ID) REFERENCES PAINTING(painting_ID)
+);
+
+
+
+CREATE TABLE PAINTING_SUBJECT(
+  painting_ID VARCHAR(5) not null,
+  subject_id VARCHAR(5) not null,
+  CONSTRAINT PAINTING_SUBJECT PRIMARY KEY (painting_ID,subject_id),
+  CONSTRAINT Painting_subject_FK1 FOREIGN KEY (painting_ID) REFERENCES PAINTING(painting_ID),
+  CONSTRAINT Painting_subject_FK2 FOREIGN KEY (subject_id) REFERENCES SUBJECT(subject_id)
+);
+
+CREATE TABLE PAINTING_STYLE (
+  painting_ID VARCHAR(5) not null,
+  style_id VARCHAR(3) not null,
+  CONSTRAINT Painting_Style_PK PRIMARY KEY (painting_ID, style_id),
+  CONSTRAINT Painting_Style_FK1 FOREIGN KEY (painting_ID) REFERENCES PAINTING(painting_ID),
+  CONSTRAINT Painting_Style_FK2 FOREIGN KEY (style_id) REFERENCES STYLES(style_id)
+);

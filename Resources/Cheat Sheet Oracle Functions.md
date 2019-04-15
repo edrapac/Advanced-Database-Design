@@ -33,6 +33,21 @@ All the stuff here is basically from the D2L page. The RDBMS manager I use is a 
 `SELECT Tell_Number, NVL(Tell_Number,'Not available') as NVL_USE
 From CUSTOMER`
 
+### Creating a new User
+`CREATE USER SALES
+  IDENTIFIED BY password
+  DEFAULT TABLESPACE USERS
+  TEMPORARY TABLESPACE TEMP
+  QUOTA 200M on USERS;
+
+GRANT create session TO SALES;
+GRANT create table TO SALES;
+GRANT create view TO SALES;
+GRANT create any trigger TO SALES;
+GRANT create any procedure TO SALES;
+GRANT create sequence TO SALES;
+GRANT create synonym TO SALES;`
+
 ### Ranking Stuff
 
 `SELECT rs.Field1,rs.Field2 
