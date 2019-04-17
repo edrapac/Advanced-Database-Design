@@ -1,0 +1,393 @@
+--Populate O_CUSTOMER 
+
+SET DEFINE OFF
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00001', CUST_P('Montgomery', 'Armfirld', to_date('06-Aug-1963', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '57218', 'Cody Point', 'New York City', 'NV', '89074')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00002', CUST_P('Ceciley', 'Parades', to_date('19-Aug-1973', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('2372', 'Michigan Circle', 'Cedar Rapids', 'CA', '93704')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00003', CUST_P('Diana', 'Flacknell', to_date('01-Jul-1964', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('919', 'Hayes Junction', 'Reno', 'DC', '20260')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00004', CUST_P('Jefferson', 'Rhyme', to_date('13-Oct-1948', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '4', 'Di Loreto Trail', 'Pittsburgh', 'TX', '78789')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00005', CUST_P('Kesley', 'Callf', to_date('16-May-1956', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('6', 'Tony Circle', 'Charlotte', 'NV', '89714')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00006', CUST_P('Rubina', 'Sproston', to_date('03-Dec-1946', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('526', 'Sunfield Terrace', 'Washington', 'MT', '59806')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00007', CUST_P('Roderick', 'Stoffers', to_date('29-Oct-1981', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '794', 'Vidon Center', 'Richmond', 'DC', '20397')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00008', CUST_P('Esme', 'Tollow', to_date('09-Mar-1949', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '953', 'Larry Drive', 'Lexington', 'CA', '91109')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00009', CUST_P('Nanine', 'Minett', to_date('08-Jan-1965', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('6', 'Schlimgen Crossing', 'Springfield', 'IL', '60657')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00010', CUST_P('Tanner', 'Magnay', to_date('08-Sep-1968', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '2', 'Dixon Alley', 'Charlotte', 'WA', '98442')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00011', CUST_P('Meggi', 'Niblo', to_date('12-May-1952', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('68152', 'Annamark Way', 'Phoenix', 'MN', '55811')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00012', CUST_P('Gearard', 'Niece', to_date('20-Dec-1947', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '6', 'Shopko Point', 'Hialeah', 'DC', '20268')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00013', CUST_P('Thorin', 'Gillan', to_date('03-Jul-1976', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '17124', 'Golf Course Plaza', 'Houston', 'SC', '29225')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00014', CUST_P('Roxanna', 'Godain', to_date('01-Oct-1952', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('74', 'Quincy Pass', 'Saint Paul', 'MD', '20904')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00015', CUST_P('Meridel', 'Dibner', to_date('18-Jan-1950', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('842', 'Tennessee Pass', 'Wichita Falls', 'NV', '89105')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00016', CUST_P('Chevy', 'Janman', to_date('01-Aug-1980', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '3', 'Texas Center', 'Hayward', 'TX', '76544')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00017', CUST_P('Huntlee', 'Ovens', to_date('13-Oct-1946', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '9', 'Charing Cross Way', 'New Orleans', 'TX', '76004')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00018', CUST_P('Heloise', 'Beevers', to_date('12-Aug-1983', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('223', 'School Pass', 'Lexington', 'WV', '25336')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00019', CUST_P('Faustina', 'MacGhee', to_date('19-Jul-1996', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('2019', 'Division Circle', 'Oklahoma City', 'FL', '34615')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00020', CUST_P('Lianna', 'Tuson', to_date('31-Mar-1943', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('744', 'Granby Street', 'New Castle', 'CA', '92415')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00021', CUST_P('Annalee', 'Giottini', to_date('24-May-1982', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('72', 'Upham Plaza', 'Kansas City', 'OH', '43210')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00022', CUST_P('Adeline', 'Mirrlees', to_date('09-Mar-1957', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('27', 'Porter Road', 'Lubbock', 'OH', '43215')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00023', CUST_P('Sybil', 'Garrison', to_date('01-Jul-1981', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('7', 'Sherman Lane', 'Phoenix', 'NY', '13251')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00024', CUST_P('Desiri', 'Eilhertsen', to_date('10-Apr-1994', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('3034', 'Bayside Avenue', 'Washington', 'NY', '11225')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00025', CUST_P('Anatol', 'Hovenden', to_date('10-Sep-1988', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '111', 'Shelley Junction', 'Philadelphia', 'OR', '97255')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00026', CUST_P('Lotty', 'O''Hartnett', to_date('11-Nov-1960', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('77', 'Coleman Pass', 'Milwaukee', 'TX', '78721')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00027', CUST_P('Giles', 'Argo', to_date('29-Oct-1994', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '63', 'Mayer Lane', 'Louisville', 'MD', '21216')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00028', CUST_P('Twila', 'Belt', to_date('05-Jul-1985', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('7014', 'West Plaza', 'Tulsa', 'NY', '10024')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00029', CUST_P('Gerri', 'Toleman', to_date('14-Oct-1943', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '98', 'Parkside Point', 'Salt Lake City', 'GA', '30336')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00030', CUST_P('Humphrey', 'Matusiak', to_date('16-Jul-1986', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '29373', 'Lyons Way', 'Largo', 'MS', '39236')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00031', CUST_P('Kalinda', 'Fosbraey', to_date('27-May-1996', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('5', 'Park Meadow Center', 'Oklahoma City', 'CA', '94913')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00032', CUST_P('Griz', 'Evanson', to_date('22-Sep-1975', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '48362', 'Surrey Way', 'Roanoke', 'VA', '22903')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00033', CUST_P('Darius', 'Fealy', to_date('02-Jul-1965', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '7', 'Beilfuss Alley', 'Colorado Springs', 'DC', '20051')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00034', CUST_P('Joanie', 'Spanswick', to_date('08-Mar-1969', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('1073', 'Havey Court', 'Atlanta', 'FL', '33620')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00035', CUST_P('Sandra', 'Havvock', to_date('06-Dec-1981', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('1', 'Oakridge Trail', 'Allentown', 'TX', '79905')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00036', CUST_P('Ange', 'Tilford', to_date('28-Sep-1962', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '83', 'Fair Oaks Point', 'Ocala', 'MO', '63110')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00037', CUST_P('Lisetta', 'Jozwicki', to_date('09-Feb-1981', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('389', 'Darwin Park', 'Brooklyn', 'FL', '33124')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00038', CUST_P('Aubert', 'Merchant', to_date('27-Feb-1988', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '4447', 'Clyde Gallagher Way', 'Arlington', 'DC', '20546')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00039', CUST_P('Abel', 'Bourner', to_date('02-Apr-1955', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '86', 'Miller Avenue', 'Charlottesville', 'FL', '33913')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00040', CUST_P('Dene', 'Oxton', to_date('04-Jan-1974', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '8847', 'Prairie Rose Center', 'Newark', 'TX', '78235')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00041', CUST_P('Yolanthe', 'Tydd', to_date('15-Aug-1959', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('49667', 'Vernon Hill', 'Fresno', 'FL', '33694')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00042', CUST_P('Nola', 'Vail', to_date('20-Jun-1954', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('2', 'Warrior Court', 'Seattle', 'AZ', '85260')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00043', CUST_P('Kaitlynn', 'Gutowski', to_date('02-May-1991', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('9', 'Kings Lane', 'Raleigh', 'NY', '11220')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00044', CUST_P('Marcie', 'Gownge', to_date('26-May-1990', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('55759', 'Old Shore Junction', 'Salt Lake City', 'TN', '38161')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00045', CUST_P('Tammie', 'Bostock', to_date('15-Aug-1956', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '4', 'Prairieview Place', 'Milwaukee', 'TX', '77806')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00046', CUST_P('Mirilla', 'Abeau', to_date('18-May-1984', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('961', 'Paget Center', 'Stamford', 'PA', '16505')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00047', CUST_P('Orelle', 'Mickleborough', to_date('05-Jul-1963', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('0', 'Continental Park', 'Columbus', 'CA', '95064')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00048', CUST_P('Veronique', 'Aistrop', to_date('12-Mar-1959', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('317', 'Division Parkway', 'Cincinnati', 'DC', '20057')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00049', CUST_P('Blane', 'Paolo', to_date('30-Apr-1961', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '89580', 'Ronald Regan Pass', 'Roanoke', 'WI', '53716')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00050', CUST_P('Garland', 'Aymes', to_date('26-Jun-1947', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('5521', 'Atwood Road', 'Beaumont', 'IL', '60646')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00051', CUST_P('Jodie', 'Pottes', to_date('10-Nov-1965', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('411', 'Graedel Street', 'San Diego', 'TX', '78410')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00052', CUST_P('Bernetta', 'Vaneev', to_date('28-Jun-1966', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('5', 'Tennyson Junction', 'Des Moines', 'FL', '33954')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00053', CUST_P('Brand', 'Orsman', to_date('05-Jul-1945', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '6129', 'Morning Park', 'Tampa', 'PA', '19125')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00054', CUST_P('Noe', 'Netti', to_date('27-Aug-1984', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '730', 'Fordem Circle', 'Chattanooga', 'TX', '79452')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00055', CUST_P('Bren', 'Conelly', to_date('24-Nov-1971', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '3948', 'Monica Alley', 'White Plains', 'SC', '29215')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00056', CUST_P('Alisander', 'Gradly', to_date('05-Jul-1996', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '5', 'Daystar Parkway', 'Grand Junction', 'WA', '98516')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00057', CUST_P('Annabell', 'Sinisbury', to_date('29-Nov-1967', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('7715', 'Brown Point', 'Memphis', 'IL', '60657')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00058', CUST_P('Veronique', 'Forestel', to_date('03-Jan-1949', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('2297', 'Straubel Way', 'Knoxville', 'OH', '44720')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00059', CUST_P('Cirillo', 'Alpe', to_date('06-Apr-1975', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '691', 'Dennis Hill', 'Dayton', 'MO', '64190')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00060', CUST_P('Rorie', 'Bearne', to_date('04-Jun-1955', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('503', 'Killdeer Park', 'Orlando', 'VA', '23551')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00061', CUST_P('Austen', 'Elia', to_date('11-Apr-1990', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '593', 'Lukken Road', 'Migrate', 'UT', '84120')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00062', CUST_P('Glennis', 'Batalini', to_date('27-Mar-1946', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('1616', 'Gulseth Court', 'Virginia Beach', 'CT', '6520')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00063', CUST_P('Danette', 'Gisburn', to_date('28-Mar-1953', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('78566', 'Corben Street', 'Washington', 'NY', '11854')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00064', CUST_P('Cleon', 'Drewry', to_date('15-Jun-1996', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '175', 'Carberry Park', 'Phoenix', 'OH', '43210')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00065', CUST_P('Virgil', 'Gowry', to_date('07-Mar-1943', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '626', '7th Terrace', 'Orlando', 'CO', '80525')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00066', CUST_P('Archibold', 'Statefield', to_date('10-Aug-1979', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '1456', 'Onsgard Hill', 'Boulder', 'CA', '93786')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00067', CUST_P('Cacilia', 'Duley', to_date('05-Jun-1944', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('35', 'Dryden Hill', 'Fresno', 'GA', '30356')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00068', CUST_P('Cristine', 'Poetz', to_date('02-Aug-1974', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('647', 'Browning Court', 'El Paso', 'TX', '76134')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00069', CUST_P('Meta', 'Godsal', to_date('02-Dec-1965', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('8', 'David Road', 'Wilmington', 'TX', '77281')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00070', CUST_P('Carleen', 'Thorrold', to_date('29-Apr-1980', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('7748', 'Glacier Hill Street', 'Trenton', 'TX', '76004')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00071', CUST_P('Adrian', 'Gwinnell', to_date('01-Sep-1942', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('2', 'Meadow Vale Drive', 'Pittsburgh', 'FL', '33325')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00072', CUST_P('Danie', 'Nanson', to_date('16-Apr-1975', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '304', 'Oriole Circle', 'Denver', 'HI', '96840')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00073', CUST_P('Netta', 'Mowsdill', to_date('12-Jan-1975', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('27332', 'Lotheville Circle', 'Fort Lauderdale', 'TX', '75507')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00074', CUST_P('Eugen', 'Semrad', to_date('12-Dec-1950', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '99114', 'Ramsey Terrace', 'Richmond', 'OH', '43220')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00075', CUST_P('Angus', 'Sproat', to_date('05-Dec-1950', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '33', 'Talmadge Place', 'Colorado Springs', 'FL', '33405')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00076', CUST_P('Kelwin', 'Faber', to_date('09-Mar-1985', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '66', 'Golf Course Circle', 'Sacramento', 'TX', '88530')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00077', CUST_P('Israel', 'Tapner', to_date('23-Jun-1967', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '93726', 'Anderson Drive', 'Lubbock', 'NE', '68505')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00078', CUST_P('Bertie', 'Connah', to_date('16-Aug-1966', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '3435', 'Service Alley', 'Charleston', 'MO', '64101')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00079', CUST_P('Reidar', 'Abelson', to_date('06-Oct-1952', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '94228', 'Roxbury Avenue', 'Seattle', 'PA', '15261')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00080', CUST_P('Meghan', 'Creese', to_date('20-Feb-1975', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('60', 'Mockingbird Pass', 'San Antonio', 'MA', '2142')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00081', CUST_P('Trevor', 'Mattevi', to_date('11-Jan-1955', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '8', 'Hudson Lane', 'Fredericksburg', 'WA', '98109')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00082', CUST_P('Charil', 'Newstead', to_date('03-Nov-1961', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('516', 'International Alley', 'Miami', 'PA', '19178')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00083', CUST_P('Vita', 'Antat', to_date('06-Sep-1948', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('398', 'Tennessee Hill', 'Des Moines', 'FL', '33124')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00084', CUST_P('Clementius', 'Trunkfield', to_date('20-May-1997', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '6', 'Saint Paul Point', 'Austin', 'CT', '6505')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00085', CUST_P('Edwin', 'Johnke', to_date('06-Oct-1979', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '7', 'Dovetail Lane', 'Tulsa', 'TN', '38308')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00086', CUST_P('Artemus', 'Dury', to_date('18-Sep-1988', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '382', 'Hoffman Pass', 'Charlottesville', 'DC', '20520')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00087', CUST_P('Tami', 'Noonan', to_date('07-Feb-1960', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('6', 'Monterey Pass', 'Fort Collins', 'VA', '23668')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00088', CUST_P('Jacob', 'Micklewright', to_date('16-Jul-1959', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '56136', 'Hayes Alley', 'Knoxville', 'OR', '97201')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00089', CUST_P('Antons', 'Predohl', to_date('15-Oct-1982', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '3', 'Little Fleur Circle', 'Tampa', 'OH', '45408')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00090', CUST_P('Augusto', 'Hessentaler', to_date('04-Oct-1951', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '792', 'Dakota Point', 'Lake Charles', 'MD', '21405')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00091', CUST_P('Pearce', 'Blazdell', to_date('21-Jul-1969', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '1', 'Oakridge Court', 'Saint Louis', 'KS', '67205')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00092', CUST_P('Bastian', 'Padden', to_date('25-Aug-1970', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '17175', 'Hudson Junction', 'Houston', 'TX', '78210')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00093', CUST_P('Caril', 'Casino', to_date('23-Sep-1951', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('29703', 'Hudson Trail', 'San Francisco', 'CO', '81015')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00094', CUST_P('Barri', 'Awmack', to_date('10-May-1972', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '1', 'Shoshone Terrace', 'Fort Lauderdale', 'WA', '98185')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00095', CUST_P('Wandis', 'Manville', to_date('28-Dec-1971', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('3', 'Golden Leaf Avenue', 'Jamaica', 'CT', '6510')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00096', CUST_P('Kelcie', 'Dodgshon', to_date('28-Dec-1980', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('291', 'Springview Terrace', 'Bismarck', 'CA', '92648')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00097', CUST_P('Halimeda', 'Woolens', to_date('04-Dec-1965', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('17', 'Schiller Trail', 'Washington', 'NY', '14614')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00098', CUST_P('Gardiner', 'Rickard', to_date('25-Feb-1962', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '63', 'Oak Road', 'Detroit', 'TX', '79699')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00099', CUST_P('Cosette', 'Mathewes', to_date('30-Dec-1947', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('8906', 'Upham Alley', 'Anderson', 'CA', '92835')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00100', CUST_P('Irv', 'Bonanno', to_date('21-Jun-1995', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '12', 'Ridge Oak Road', 'Montgomery', 'AK', '99507')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00101', CUST_P('Chadwick', 'Keegan', to_date('03-Nov-1986', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '52', 'Karstens Circle', 'Santa Barbara', 'CA', '44125')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00102', CUST_P('Leonard', 'Aymes', to_date('16-Jun-1968', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '61701', 'Schiller Place', 'Fort Myers', 'FL', '32259')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00103', CUST_P('Garrik', 'Scoyne', to_date('25-Feb-1959', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '2', 'Caliangt Parkway', 'Schaumburg', 'IL', '33661')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00104', CUST_P('Madelin', 'Pulster', to_date('12-Mar-1954', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('797', 'Cascade Court', 'Chandler', 'AZ', '22047')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00105', CUST_P('Prudence', 'Turbill', to_date('11-Apr-1984', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('46404', '8th Point', 'Virginia Beach', 'VA', '27116')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00106', CUST_P('Freedman', 'Crowch', to_date('29-Jun-1967', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '30051', 'Norway Maple Junction', 'Springfield', 'MA', '78744')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00107', CUST_P('Amabel', 'Pilfold', to_date('07-Dec-1966', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('67', 'Manitowish Plaza', 'Lake Charles', 'LA', '76016')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00108', CUST_P('Clement', 'Copo', to_date('04-Oct-1970', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '19', 'Farwell Court', 'Charlotte', 'NC', '94164')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00109', CUST_P('Carlie', 'Steiner', to_date('11-Feb-1957', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '2043', 'Miller Pass', 'Los Angeles', 'CA', '90605')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00110', CUST_P('Sully', 'Elsip', to_date('27-Feb-1968', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '6384', 'Nelson Way', 'Shreveport', 'LA', '68134')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00111', CUST_P('Haily', 'Kacheler', to_date('06-Jul-1987', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('4', 'High Crossing Plaza', 'Miami', 'FL', '77045')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00112', CUST_P('Leonanie', 'Tiley', to_date('31-Jan-1947', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('17409', 'Barnett Circle', 'Fort Myers', 'FL', '81010')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00113', CUST_P('Kally', 'Tolworthie', to_date('21-Nov-1937', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('3', 'Jay Drive', 'Portland', 'OR', '43666')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00114', CUST_P('Alvira', 'Drysdall', to_date('24-Jul-1965', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('611', 'Dennis Drive', 'Baton Rouge', 'LA', '92805')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00115', CUST_P('Guss', 'Vasiliu', to_date('28-Apr-1991', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '6943', 'Southridge Alley', 'Seminole', 'FL', '85215')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00116', CUST_P('Isabelle', 'Overell', to_date('12-Jun-1988', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('36', 'Luster Alley', 'Austin', 'TX', '85725')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00117', CUST_P('Durant', 'Kalewe', to_date('13-Nov-1946', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '64', 'Fairview Lane', 'Waltham', 'MA', '29403')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00118', CUST_P('Teresita', 'Munnings', to_date('11-Apr-1968', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('2', 'Loomis Park', 'Chicago', 'IL', '93907')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00119', CUST_P('Parry', 'Craddy', to_date('02-Apr-1931', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '708', 'Killdeer Alley', 'Salem', 'OR', '37416')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00120', CUST_P('Hedi', 'Nafzger', to_date('04-Aug-1964', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('787', 'Kinsman Center', 'Jersey City', 'NJ', '73135')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00121', CUST_P('Tully', 'Steaning', to_date('07-Aug-1942', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '339', 'Garrison Hill', 'Naples', 'FL', '39505')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00122', CUST_P('Brannon', 'Dutnell', to_date('12-Dec-1988', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '57', 'Carpenter Point', 'Raleigh', 'NC', '15235')),'2');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00123', CUST_P('Celine', 'de Clerc', to_date('20-Jul-1947', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('772', 'Sauthoff Avenue', 'Merrifield', 'VA', '77223')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00124', CUST_P('Donall', 'Curzon', to_date('11-Oct-1954', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '94', 'Tennyson Center', 'Waco', 'TX', '55166')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00125', CUST_P('Kissie', 'McKinnell', to_date('04-Apr-1964', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('97', 'Scott Court', 'Los Angeles', 'CA', '98506')),'4');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00126', CUST_P('Farlie', 'Epps', to_date('26-Jun-1965', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '672', 'Service Hill', 'Anaheim', 'CA', '14233')),'3');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00127', CUST_P('Cally', 'Sidry', to_date('14-Aug-1990', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('46871', 'Sutteridge Park', 'Oceanside', 'CA', '15279')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00128', CUST_P('Beulah', 'Leverson', to_date('08-Dec-1986', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('758', 'Dapin Parkway', 'Schenectady', 'NY', '20520')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00129', CUST_P('Coletta', 'Brickell', to_date('17-Mar-1969', 'DD-MON-RR'), 'F',CUST_ORDER_ARRAY(NULL)),address_tab(ADDRESS_P('3115', 'Bobwhite Center', 'Indianapolis', 'IN', '8608')),'1');
+
+INSERT INTO O_CUSTOMER (CUSTOMER_ID, CUSTOMER, ADDRESS, REGION_ID) 
+VALUES ('00130', CUST_P('Dar', 'Vakhonin', to_date('14-Jun-1965', 'DD-MON-RR'), 'M',CUST_ORDERS_ARR(NULL)),address_tab(ADDRESS_P( '405', 'Hintze Point', 'Salem', 'OR', '99205')),'1');

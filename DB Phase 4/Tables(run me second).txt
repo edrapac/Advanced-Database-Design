@@ -1,4 +1,4 @@
-drop table P_CUSTOMER cascade constraints;
+drop table O_CUSTOMER cascade constraints;
 drop table STYLES cascade constraints;
 drop table SUBJECT cascade constraints;
 drop table ARTIST cascade constraints;
@@ -7,7 +7,7 @@ drop table PAINTING_STYLE cascade constraints;
 drop table CUSTOMER_ORDER cascade constraints;
 drop table PAINTING_ORDER cascade constraints;
 drop table PAINTING_SUBJECT cascade constraints;
-drop table P_EMPLOYEE cascade constraints;
+drop table O_EMPLOYEE cascade constraints;
 drop table REGION cascade constraints;
 drop table JOB_HISTORY cascade constraints;
 drop table DISCOUNT_SALES cascade constraints;
@@ -15,14 +15,12 @@ drop table DISCOUNT_SALES cascade constraints;
 
 
 
-
-CREATE TABLE P_EMPLOYEE
+CREATE TABLE O_EMPLOYEE
   ( employee_ID VARCHAR(5) not null,
     employee EMP_P,
-    ADDRESS ADDRESS_P,
-    CONSTRAINT EMPLOYEE_PK PRIMARY KEY (employee_ID));
-    -- We dont need a nested address tab table because we dont use address tab
-
+    ADDRESS ADDRESS_TAB,
+    CONSTRAINT EMPLOYEE_PK PRIMARY KEY (employee_ID))
+    NESTED TABLE address STORE AS nested_address_table;
 
 
 
@@ -35,7 +33,7 @@ CREATE TABLE JOB_HISTORY
   start_date DATE,
   end_date DATE,
   CONSTRAINT JOB_HISTORY_PK PRIMARY KEY (history_id),
-  CONSTRAINT JOB_HISTORY_FK1 FOREIGN KEY (employee_ID) REFERENCES P_EMPLOYEE(employee_ID));
+  CONSTRAINT JOB_HISTORY_FK1 FOREIGN KEY (employee_ID) REFERENCES O_EMPLOYEE(employee_ID));
 
 CREATE TABLE DISCOUNT_SALES
 ( discount_id VARCHAR(5) not null,
@@ -53,13 +51,14 @@ CREATE TABLE REGION
 
 );
 
-CREATE TABLE P_CUSTOMER 
+CREATE TABLE O_CUSTOMER 
   (customer_id VARCHAR(5) not null, 
   CUSTOMER CUST_P,
-  ADDRESS ADDRESS_P,
+  ADDRESS ADDRESS_TAB,
   region_id VARCHAR(1) not null,
   CONSTRAINT CUSTOMER_PK1 PRIMARY KEY (customer_id),
-  CONSTRAINT CUSTOMER_FK1 FOREIGN KEY (region_id) REFERENCES REGION(region_id));
+  CONSTRAINT CUSTOMER_FK1 FOREIGN KEY (region_id) REFERENCES REGION(region_id))
+  NESTED TABLE address STORE AS nested_address_table1;
 
 
 
@@ -106,8 +105,8 @@ CREATE TABLE CUSTOMER_ORDER (
   date_created DATE,
   date_shipped DATE,
   CONSTRAINT Customer_Order_PK PRIMARY KEY (order_id),
-  CONSTRAINT Customer_Order_FK1 FOREIGN KEY (customer_id) REFERENCES P_CUSTOMER(customer_id),
-  CONSTRAINT Customer_Order_FK2 FOREIGN KEY (employee_ID) REFERENCES P_EMPLOYEE(employee_id)
+  CONSTRAINT Customer_Order_FK1 FOREIGN KEY (customer_id) REFERENCES O_CUSTOMER(customer_id),
+  CONSTRAINT Customer_Order_FK2 FOREIGN KEY (employee_ID) REFERENCES O_EMPLOYEE(employee_id)
 
 );
 

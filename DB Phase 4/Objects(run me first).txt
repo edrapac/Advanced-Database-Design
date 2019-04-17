@@ -1,26 +1,10 @@
-/**
-TODO:
-CREATE OBJECTS FOR:
----------------------
-PERSON - (Lastname, Firstname, Age, DOB) DONE	
-	|-EMPLOYEE - (Gender, Position, Comission,Start_date,End_date)
 
-	|- CUSTOMER (Orders, PERSON)
-
-ADDRESS - (Street, City, State, Zip) DONE
-
-Add orders to the order array now
-
-Employee Table must now have a column EMPLOYEE
-Employee Table must now have a column ADDRESS
-Customer Table must now have a column ADDRESS
-Customer Table must now have a column CUSTOMER
-
-All tables must now be prefaced with a P_TableName
-
-
-**/
 DROP TYPE PER_P FORCE;
+DROP TYPE EMP_P FORCE;
+DROP TYPE CUST_ORDERS_ARR FORCE;
+DROP TYPE CUST_P FORCE;
+DROP TYPE ADDRESS_P FORCE; 
+DROP TYPE address_tab FORCE;
 CREATE OR REPLACE TYPE PER_P AS OBJECT
 (
 LAST_NAME VARCHAR(20),
@@ -37,7 +21,6 @@ CREATE OR REPLACE TYPE EMP_P UNDER PER_P --this will just hold the generic job t
 
 (
 POSITION VARCHAR(15),
-JOB_ID VARCHAR(5),
 RATE NUMBER,
 COMISSION DECIMAL(1,2)
 );
@@ -61,6 +44,9 @@ CITY VARCHAR2(30),
 STATE VARCHAR2(2),
 POSTAL_CODE NUMBER(10)
 );
+/
+CREATE TYPE address_tab AS TABLE OF
+ADDRESS_P;
 /
 
 CREATE OR REPLACE TYPE BODY PER_P AS 
