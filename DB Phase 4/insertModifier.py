@@ -16,6 +16,6 @@ with fileinput.FileInput('--Populate CUSTOMER.txt',inplace=True,backup='.bak') a
 			ranges = []
 			for x in range(3):
 				green = random.randint(0,(len(orders)-1))
-				ranges.append(green)
+				ranges.append(orders[green])
 				orders.pop(green)
-		print(line.replace("REPLACED",ranges[0]+","+ranges[1]+","+ranges[2]),end='')
+		print(line.replace("NULL",(str(ranges[0])+","+str(ranges[1])+","+str(ranges[2]))),end='')
