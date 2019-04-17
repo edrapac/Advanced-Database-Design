@@ -9,6 +9,7 @@ drop table PAINTING_ORDER cascade constraints;
 drop table PAINTING_SUBJECT cascade constraints;
 drop table O_EMPLOYEE cascade constraints;
 drop table REGION cascade constraints;
+drop table JOB_TITLE cascade constraints;
 drop table JOB_HISTORY cascade constraints;
 drop table DISCOUNT_SALES cascade constraints;
 
@@ -23,7 +24,12 @@ CREATE TABLE O_EMPLOYEE
     NESTED TABLE address STORE AS nested_address_table;
 
 
-
+CREATE TABLE JOB_TITLE 
+( job_id VARCHAR(5) not null,
+  job_name VARCHAR(20) not null,
+  sales_comission DECIMAL(1,2),
+  CONSTRAINT JOB_TITLE_PK1 PRIMARY KEY (job_id)
+);
 
 CREATE TABLE JOB_HISTORY
 (
