@@ -20,7 +20,7 @@ NOT FINAL;
 CREATE OR REPLACE TYPE EMP_P UNDER PER_P --this will just hold the generic job titles and rates instead of a job title table
 
 (
-POSITION VARCHAR(15),
+POSITION VARCHAR(30),
 RATE NUMBER,
 COMISSION DECIMAL(1,2)
 );

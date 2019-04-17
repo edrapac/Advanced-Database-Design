@@ -1,36 +1,35 @@
 -- Populate O_EMPLOYEE
 
-SET DEFINE OFF
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00001', EMP_P('Conchita', 'Matieu', to_date('06-Aug-1963', 'DD-MON-RR'), 'F','Manager','50000',NULL),address_tab(ADDRESS_P('5', 'Old Shore', 'Des Moines', 'IA', '50315')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00002', EMP_P('Jemimah', 'Smalman', to_date('19-Aug-1973', 'DD-MON-RR'), 'F', 'Sales','40000','0.05'),address_tab(ADDRESS_P('8947', 'West', 'Peoria', 'IL', '61651')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00003', EMP_P('Nelson', 'Fulton', to_date('01-Jul-1964', 'DD-MON-RR'), 'M','Sales Manager','50000','0.08'),address_tab(ADDRESS_P('10', 'Spenser', 'Lexington', 'KY', '40576')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00004', EMP_P('Cello', 'Berick', to_date('13-Oct-1948', 'DD-MON-RR'), 'M','Administrator','45000',NULL),address_tab(ADDRESS_P('65', 'Walton', 'Fort Lauderdale', 'FL', '33355')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00005', EMP_P('Vern', 'Pounsett', to_date('16-May-1956', 'DD-MON-RR'), 'M','Maintenance','40000',NULL),address_tab(ADDRESS_P( '910', 'Bayside', 'Wilmington', 'DE', '19886')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00006', EMP_P('Aguste', 'Moynham',to_date('03-Dec-1946', 'DD-MON-RR'), 'M','Customer Service','42000',NULL),address_tab(ADDRESS_P( '76', 'Eagan', 'Peoria', 'IL', '61614')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00007', EMP_P('Louise', 'Gloves', to_date('29-Oct-1981', 'DD-MON-RR'), 'F', 'Marketing','50000',NULL),address_tab(ADDRESS_P( '3', 'Lawn', 'Oakland', 'CA', '94605')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
-VALUES ('00008', EMP_P('Sollie', 'Mizen', 'M', 'Finance','50000',NULL),address_tab(ADDRESS_P( '55587', 'Cherokee', 'Fort Worth', 'TX', '76115')));
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
+VALUES ('00008', EMP_P('Sollie', 'Mizen', to_date('29-Oct-1976', 'DD-MON-RR'), 'M', 'Finance','50000',NULL),address_tab(ADDRESS_P( '55587', 'Cherokee', 'Fort Worth', 'TX', '76115')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
-VALUES ('00009', EMP_P('Guillema', 'Negal', to_date('09-Mar-1949', 'DD-MON-RR'), 'F','Manager','45000',NULL)address_tab(ADDRESS_P( '8', 'Harper', 'Madison', 'WI', '53716')));
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
+VALUES ('00009', EMP_P('Guillema', 'Negal', to_date('09-Mar-1949', 'DD-MON-RR'), 'F','Manager','45000',NULL),address_tab(ADDRESS_P( '8', 'Harper', 'Madison', 'WI', '53716')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00010', EMP_P('Curtice', 'Branchett', to_date('08-Jan-1965', 'DD-MON-RR'), 'M','Sales','52000','0.08'),address_tab(ADDRESS_P( '7409', 'Lakeland', 'Fairfax', 'VA', '22036')));
 
-INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS) 
+INSERT INTO O_EMPLOYEE (EMPLOYEE_ID, EMPLOYEE, ADDRESS)
 VALUES ('00011', EMP_P('Daffi', 'Wardell', to_date('08-Sep-1968', 'DD-MON-RR'), 'F','Sales','51000','0.05'),address_tab(ADDRESS_P( '4', 'Anthes', 'Killeen', 'TX', '76544')));
