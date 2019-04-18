@@ -1,0 +1,41 @@
+1. List all employees (employee number, first and last names, age, 
+and commission details) from Illinois.
+
+SELECT e.employee_id, e.employee.first_name, e.employee.last_name,e.employee.age() AGE, e.employee.comission COMMISSION, a.state
+FROM O_employee e, TABLE (address) a
+WHERE a.state = 'IL'
+
+2. Find number of employees and their total 
+commissions. 
+
+3. List all employees whose commission is greater than the average 
+commission, and show by how much. 
+
+4. Find employee whose commission is larger than commission of
+every member of employee at branch 7003.
+
+5. For each branch, list numbers and first names of employee 
+who deal with the customers and the customers they deal with.
+
+6. Find number of customers handled by each employee member.
+
+7. List all employees who are either dealing with customers or 
+not, and also their customer names. 
+
+8. List branches which have employees and also new branches 
+which don't have employees, along with employee numbers
+
+9. List branches which have employees and also new branches 
+which don't have employees, along with employee numbers, and 
+also employees which are not assigned to any branch.
+
+10. List all cities where there is either a branch in that city 
+or there is a customer from that city.
+
+11. Show the top three customers according to their total sales. (2 points)
+
+12. Show employee Id, employee full name (last, first), city, 
+state, and their position. Your result should be sorted 
+according to President first, Manager second, Sales Rep third, 
+and the others as fourth. (Hint: uses the DECODE to order the 
+result) (2 points)
