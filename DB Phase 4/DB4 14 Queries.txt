@@ -97,23 +97,22 @@ FROM o_customer c, TABLE(ADDRESS) c;
 
 With qty1 as
 (
-    select count(o.customer_id) qty, o.customer_id cust_id
-    from customer_order o
-    group by o.customer_id
+    select CO.ORDER_ID, SUM(P.PRICE) SUMS, OC.CUSTOMER_ID
+    from PAINTING_ORDER PO
+    JOIN PAINTING P on PO.PAINTING_ID = P.PAINTING_ID
+    JOIN CUSTOMER_ORDER CO on PO.ORDER_ID = CO.ORDER_ID
+    JOIN O_CUSTOMER OC on CO.CUSTOMER_ID = OC.CUSTOMER_ID
+    group by CO.ORDER_ID, OC.CUSTOMER_ID
 )
-
-SELECT t.rank, t.customer, t.first_name, t.total
+SELECT  t.rank,t.sums,t.cust_id
 FROM
-(
-SELECT RANK() over (order by sum(qty1.qty*paint.price)desc) as RANK,
-c.customer_id CUSTOMER, c.customer.first_name first_name, sum((count(o.customer_id)*paint.price)) TOTAL
-FROM o_customer c, customer_order o, painting_order p, painting paint, qty1
-WHERE c.customer_id = o.customer_id
-AND qty1.cust_id = o.customer_id
-AND o.order_id = p.order_id
-AND p.painting_id = paint.painting_id
-GROUP BY c.CUSTOMER_ID, c.customer.first_name,qty1.qty) t
-WHERE t.rank <=3;
+  (
+       SELECT RANK() over (order by SUM(qty1.SUMS) desc) as RANK,
+       SUM(qty1.SUMS) SUMS , qty1.CUSTOMER_ID CUST_ID
+FROM qty1
+GROUP BY qty1.CUSTOMER_ID) t
+WHERE t.RANK <=3;
+
 
 12. Show employee Id, employee full name (last, first), city, 
 state, and their position. Your result should be sorted 
