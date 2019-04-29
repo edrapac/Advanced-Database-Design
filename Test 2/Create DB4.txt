@@ -267,6 +267,7 @@ CREATE TABLE PAINTING_STYLE (
 CREATE TABLE COLLEGE (
 employee_ID VARCHAR(5) NOT NULL,
 major VARCHAR(30),
+university VARCHAR(30),
 CONSTRAINT College_PK PRIMARY KEY (employee_ID),
 CONSTRAINT College_FK FOREIGN KEY (employee_ID) REFERENCES O_EMPLOYEE(employee_ID)
 
@@ -7514,9 +7515,9 @@ INSERT INTO REVIEW (YEAR_REVIEWED, PAINTING_ID, AVG_REVIEW)
 VALUES ('2018', '00023', 1.09);
 
 -- Populate college
-INSERT INTO COLLEGE (employee_ID,major) VALUES ('00011','Biology');
+INSERT INTO COLLEGE (employee_ID,major,university) VALUES ('00011','Biology','MNSU Mankato');
 
-INSERT INTO COLLEGE (employee_ID,major) VALUES ('00010','Business and Marketing');
+INSERT INTO COLLEGE (employee_ID,major,university) VALUES ('00010','Business and Marketing','St. Olaf');
 
 
 
