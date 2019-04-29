@@ -120,6 +120,7 @@ drop table JOB_TITLE cascade constraints;
 drop table JOB_HISTORY cascade constraints;
 drop table DISCOUNT_SALES cascade constraints;
 drop table REVIEW cascade constraints;
+drop table COLLEGE cascade constraints;
 
 
 
@@ -263,7 +264,13 @@ CREATE TABLE PAINTING_STYLE (
   CONSTRAINT Painting_Style_FK2 FOREIGN KEY (style_id) REFERENCES STYLES(style_id)
 );
 
+CREATE TABLE COLLEGE (
+employee_ID VARCHAR(5) NOT NULL,
+major VARCHAR(30),
+CONSTRAINT College_PK PRIMARY KEY (employee_ID),
+CONSTRAINT College_FK FOREIGN KEY (employee_ID) REFERENCES O_EMPLOYEE(employee_ID)
 
+);
 -- Populate ARTIST
 
 
@@ -7506,6 +7513,10 @@ VALUES ('2018', '00022', 3.50);
 INSERT INTO REVIEW (YEAR_REVIEWED, PAINTING_ID, AVG_REVIEW) 
 VALUES ('2018', '00023', 1.09);
 
+-- Populate college
+INSERT INTO COLLEGE (employee_ID,major) VALUES ('00011','Biology');
+
+INSERT INTO COLLEGE (employee_ID,major) VALUES ('00010','Business and Marketing');
 
 
 
