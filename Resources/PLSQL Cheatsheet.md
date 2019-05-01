@@ -3,7 +3,7 @@
 ## General Structure for "For Loops"
 <b>Note</b>: We will never have to use the "While Loop" implementation for loops as selecting a cursor, determining if a record is found etc is done for us using a "For loop" anyways.
 
-``` 
+```sql
 set serveroutput on 
 DECLARE
     BEGIN
